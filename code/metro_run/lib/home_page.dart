@@ -10,7 +10,7 @@ class _HomePageState extends State<HomePage> {
   Widget build(BuildContext context) {
     return new Scaffold(
       appBar: new AppBar(
-        title: new Text('Dashboard'),
+        title: new Text('Home'),
         backgroundColor: Colors.green[800],
         centerTitle: true,
       ),
