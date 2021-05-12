@@ -57,10 +57,35 @@ class ProfilePageState extends State<ProfilePage> {
                       color: Colors.green[50],
                       elevation: 7.0,
                       child: GestureDetector(
-                        onTap: () {},
+                        onTap: () {
+                          Navigator.of(context).pushNamed('/home');
+                        },
                         child: Center(
                           child: Text(
                             'Edit Profile',
+                            style: TextStyle(
+                                color: Colors.green[700],
+                                fontWeight: FontWeight.bold),
+                          ),
+                        ),
+                      ),
+                    )),
+                SizedBox(height: 40.0),
+                Container(
+                    height: 40.0,
+                    width: 120.0,
+                    child: Material(
+                      borderRadius: BorderRadius.circular(20.0),
+                      shadowColor: Colors.green[900],
+                      color: Colors.green[50],
+                      elevation: 7.0,
+                      child: GestureDetector(
+                        onTap: () {
+                          Navigator.of(context).pushNamed('/ridespage');
+                        },
+                        child: Center(
+                          child: Text(
+                            'View previous rides',
                             style: TextStyle(
                                 color: Colors.green[700],
                                 fontWeight: FontWeight.bold),
