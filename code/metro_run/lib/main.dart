@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:metro_run/home.dart';
+import 'package:metro_run/mapPage.dart';
 import 'package:metro_run/profile_page.dart';
 import 'package:metro_run/rides.dart';
 
@@ -25,6 +25,7 @@ class MyApp extends StatelessWidget {
         '/loginpage': (BuildContext context) => new LoginPage(),
         '/profilepage': (BuildContext context) => new ProfilePage(),
         '/ridespage': (BuildContext context) => new RidesPage(),
+        '/mapdisplaypage': (BuildContext context) => new MapDisplayPage()
       },
     );
   }

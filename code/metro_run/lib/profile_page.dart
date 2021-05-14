@@ -26,7 +26,8 @@ class ProfilePageState extends State<ProfilePage> {
                     decoration: BoxDecoration(
                         color: Colors.white,
                         image: DecorationImage(
-                            image: NetworkImage(''), fit: BoxFit.cover),
+                            image: AssetImage('assets/ProfilePicture.jpg'),
+                            fit: BoxFit.cover),
                         borderRadius: BorderRadius.all(Radius.circular(75.0)),
                         boxShadow: [
                           BoxShadow(blurRadius: 7.0, color: Colors.green[900])
@@ -72,8 +73,8 @@ class ProfilePageState extends State<ProfilePage> {
                     )),
                 SizedBox(height: 40.0),
                 Container(
-                    height: 40.0,
-                    width: 120.0,
+                    height: 30.0,
+                    width: 95.0,
                     child: Material(
                       borderRadius: BorderRadius.circular(20.0),
                       shadowColor: Colors.green[900],
@@ -85,7 +86,7 @@ class ProfilePageState extends State<ProfilePage> {
                         },
                         child: Center(
                           child: Text(
-                            'View previous rides',
+                            'Rides',
                             style: TextStyle(
                                 color: Colors.green[700],
                                 fontWeight: FontWeight.bold),
