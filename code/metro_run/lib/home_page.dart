@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_icons/flutter_icons.dart';
-import 'package:metro_run/ticketPage.dart';
+import 'package:metro_run/rides.dart';
+import 'package:metro_run/ticket.dart';
 import 'package:metro_run/profile_preview.dart';
+import 'package:metro_run/ticketPreview.dart';
 import 'package:metro_run/wallet_preview.dart';
 import 'package:metro_run/color_collection.dart';
 import 'package:metro_run/map.dart';
@@ -17,7 +19,7 @@ class _HomePageState extends State<HomePage> {
   var selectedOption = 0;
 
   List allOptions = [
-    TicketPage(),
+    TicketPreview(),
     MapPage(),
     WalletPreview(),
     ProfilePreview()
@@ -52,11 +54,21 @@ class _HomePageState extends State<HomePage> {
               width: screenWidth - (screenWidth / 4),
               color: Colors.white),
         ),
-        Positioned(
+        /* Positioned(
           top: 35.0,
-          left: 20.0,
-          child: Icon(Feather.map),
+          left: 10.0,
+          child: ElevatedButton(
+            child: Text(
+              'Logout',
+              style: TextStyle(color: Colors.green[800]),
+            ),
+            style: ElevatedButton.styleFrom(primary: Colors.green[200]),
+            onPressed: () {
+              Navigator.of(context).pushNamed('/loginpage');
+            },
+          ),
         ),
+        */
         Positioned(
           top: screenHeight - (screenHeight - 100.0),
           left: (screenWidth / 4) + 25.0,
@@ -76,8 +88,8 @@ class _HomePageState extends State<HomePage> {
                 'What would you like to do?',
                 style: TextStyle(color: Colors.grey[700], fontSize: 15.0),
               ),
-              SizedBox(height: 20.0),
-              Container(
+
+              /*Container(
                 height: 40.0,
                 width: 225.0,
                 child: TextField(
@@ -90,15 +102,20 @@ class _HomePageState extends State<HomePage> {
                       contentPadding: EdgeInsets.only(top: 10.0, left: 10.0),
                       hintText: "Search",
                       hintStyle: TextStyle(
-                        color: Colors.grey[300],
+                        color: Colors.grey[500],
                         fontSize: 15.0,
                       ),
                       suffixIcon: Icon(
                         Icons.search,
-                        color: Colors.grey[300].withOpacity(0.4),
+                        color: Colors.grey[500].withOpacity(0.4),
                       )),
                 ),
-              )
+              ),
+              
+              Container(
+                child: Image.asset("assets/Logo.jpg"),
+              ),
+              */
             ],
           ),
         ),

@@ -1,11 +1,12 @@
 import 'package:flutter/material.dart';
 
-class ProfilePreview extends StatefulWidget {
+class TicketPreview extends StatefulWidget {
   @override
-  _ProfilePreviewState createState() => _ProfilePreviewState();
+  _TicketPreviewState createState() => _TicketPreviewState();
 }
 
-class _ProfilePreviewState extends State<ProfilePreview> {
+class _TicketPreviewState extends State<TicketPreview> {
+  bool opened = false;
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -16,12 +17,12 @@ class _ProfilePreviewState extends State<ProfilePreview> {
               constraints: BoxConstraints.tightFor(width: 100, height: 100),
               child: ElevatedButton(
                 child: Text(
-                  'View Profile',
+                  'Book Tickets',
                   style: TextStyle(fontSize: 18, color: Colors.green[900]),
                   textAlign: TextAlign.center,
                 ),
                 onPressed: () {
-                  Navigator.of(context).pushNamed('/profilepage');
+                  Navigator.of(context).pushNamed('/bookingpage');
                 },
                 style: ElevatedButton.styleFrom(
                     shape: CircleBorder(),
@@ -34,7 +35,7 @@ class _ProfilePreviewState extends State<ProfilePreview> {
               constraints: BoxConstraints.tightFor(width: 100, height: 100),
               child: ElevatedButton(
                 child: Text(
-                  'View Rides',
+                  'View Active Ticket',
                   style: TextStyle(fontSize: 18, color: Colors.green[900]),
                   textAlign: TextAlign.center,
                 ),

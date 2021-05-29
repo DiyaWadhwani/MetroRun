@@ -24,6 +24,8 @@ dependencies:
  
   flutter:
     sdk: flutter
+  firebase_core: ^1.2.0
+  firebase_database: ^7.0.0
 
 
   # The following adds the Cupertino Icons font to your application.
@@ -32,11 +34,13 @@ dependencies:
   flutter_icons:
   smooth_star_rating:
   font_awesome_flutter: 
+  splashscreen:
 
 
 dev_dependencies:
   flutter_test:
     sdk: flutter
+
 
 # For information on the generic Dart part of this file, see the
 # following page: https://dart.dev/tools/pub/pubspec
@@ -53,6 +57,10 @@ flutter:
   assets:
    - assets/MetroMap.jpg
    - assets/ProfilePicture.jpg
+   - assets/Logo.jpg
+   - assets/nammaMetro.png
+   - assets/MetroRunLogo.png
+   - assets/MetroRunSplashScreen.png
   #   - images/a_dot_ham.jpeg
 
   # An image asset can refer to one or more resolution-specific "variants", see

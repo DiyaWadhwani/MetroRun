@@ -15,7 +15,7 @@ class RidesPageState extends State<RidesPage> {
         backgroundColor: Colors.white,
         leading: IconButton(
             onPressed: () {
-              Navigator.of(context).pushNamed('/profilepage');
+              Navigator.of(context).pushNamed('/homepage');
             },
             icon: Icon(Icons.arrow_back),
             color: Colors.green[800]),

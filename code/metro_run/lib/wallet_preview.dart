@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:metro_run/color_collection.dart';
+import 'package:metro_run/header_design.dart';
 
 class WalletPreview extends StatefulWidget {
   @override
@@ -13,15 +15,10 @@ class _WalletPreviewState extends State<WalletPreview> {
         body: Stack(
       children: <Widget>[
         Container(
-          child: Align(
-            alignment: Alignment.bottomCenter,
-            child: Text(
-              'Tap to view your wallet.',
-              style: TextStyle(
-                  color: Colors.green[800], fontWeight: FontWeight.bold),
-            ),
-          ),
-        ),
+            child: Align(
+          alignment: Alignment.topCenter,
+          child: Image.asset("assets/MetroRunLogo.png"),
+        )),
         AnimatedPositioned(
             duration: Duration(milliseconds: 300),
             left: opened
@@ -67,13 +64,17 @@ class _WalletPreviewState extends State<WalletPreview> {
                         padding: EdgeInsets.all(8.0),
                         child: Container(
                             height: 50.0,
-                            width: 80.0,
+                            width: 120.0,
                             decoration: BoxDecoration(
                                 borderRadius: BorderRadius.circular(40.0),
-                                color: Colors.green[700]),
+                                color: kPrimaryColor),
                             child: Center(
-                                child: Icon(Icons.wallet_giftcard,
-                                    color: Colors.white)))),
+                                child: TextButton(
+                              child: Text(
+                                'Book tickets',
+                                style: TextStyle(color: Colors.green[800]),
+                              ),
+                            )))),
                     onTap: () {
                       setState(() {
                         opened = false;
