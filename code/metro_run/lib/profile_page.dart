@@ -72,9 +72,7 @@ class ProfilePageState extends State<ProfilePage> {
                           color: Colors.purple[50],
                           elevation: 5.0,
                           child: GestureDetector(
-                            onTap: () {
-                              Navigator.of(context).pushNamed('/bookingpage');
-                            },
+                            onTap: () {},
                             child: Center(
                               child: Text(
                                 'Edit Profile',
