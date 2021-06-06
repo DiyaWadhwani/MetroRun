@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 
 import 'package:razorpay_flutter/razorpay_flutter.dart';
 import 'package:toast/toast.dart';
-import 'package:nanoid/nanoid.dart';
 import 'ticket.dart';
 
 double amountToBePaid = 0;
@@ -68,11 +67,7 @@ class _PaymentState extends State<Payment> {
   void handlerPaymentSuccess(PaymentSuccessResponse response) {
     print("Payment success");
     Toast.show("Payment success", context);
-    var id = nanoid();
-    var custom_length_id = nanoid(10);
     Navigator.of(context).pushNamed('/qrcodepage');
-
-    //Widget build(BuildContext context) {}
   }
 
   void handlerErrorFailure(PaymentFailureResponse response) {

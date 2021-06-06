@@ -7,6 +7,7 @@ class GeneratePage extends StatefulWidget {
   @override
   State<StatefulWidget> createState() => GeneratePageState();
 }
+
 const chars = "abcdefghijklmnopqrstuvwxyz0123456789";
 // ignore: non_constant_identifier_names
 String RandomString(int strlen) {
@@ -21,36 +22,30 @@ String RandomString(int strlen) {
 }
 
 class GeneratePageState extends State<GeneratePage> {
-  String qrData = RandomString(10);// generating unique string for qr code
-    
-      @override
-      Widget build(BuildContext context) {
-        return Scaffold(
-          appBar: AppBar(
-            backgroundColor: Colors.green[300],
-            title: Text('QR Code',
-            style: TextStyle(color: Colors.black)
+  String qrData = RandomString(10); // generating unique string for qr code
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        backgroundColor: Colors.green[300],
+        title:
+            Text('Your unique QR Code', style: TextStyle(color: Colors.black)),
+        centerTitle: true,
+        actions: <Widget>[],
+      ),
+      body: Container(
+        padding: EdgeInsets.all(20.0),
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.stretch,
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: <Widget>[
+            QrImage(
+              data: qrData, //plce where the QR Image will be shown
             ),
-            centerTitle: true,
-            actions: <Widget>[],
-          ),
-          body: Container(
-            padding: EdgeInsets.all(20.0),
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.stretch,
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: <Widget>[
-                QrImage(
-                  data: qrData,   //plce where the QR Image will be shown
-                ),
-                SizedBox(
-                  height: 40.0,
-                ),
-              ],
-            ),
-          ),
-        );
-      }
-    }
-  
-  
+          ],
+        ),
+      ),
+    );
+  }
+}
