@@ -18,11 +18,11 @@ class _qrState extends State<qr> {
           mainAxisAlignment: MainAxisAlignment.center,
           crossAxisAlignment: CrossAxisAlignment.stretch,
           children: <Widget>[
-            // Image(
-            //   image: AssetImage('assets/pay2.PNG'),
-            //   height: 300,
-            //   width: 300,
-            // ),
+            Image(
+              image: AssetImage('assets/pay2.PNG'),
+              height: 300,
+              width: 300,
+            ),
             SizedBox(
               height: 30.0,
             ),
