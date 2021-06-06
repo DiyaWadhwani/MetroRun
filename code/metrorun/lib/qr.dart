@@ -1,12 +1,12 @@
 import 'package:flutter/material.dart';
 import 'generate.dart';
 
-class qr extends StatefulWidget {
+class QR extends StatefulWidget {
   @override
-  _qrState createState() => _qrState();
+  _QRState createState() => _QRState();
 }
 
-class _qrState extends State<qr> {
+class _QRState extends State<QR> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -19,14 +19,14 @@ class _qrState extends State<qr> {
           crossAxisAlignment: CrossAxisAlignment.stretch,
           children: <Widget>[
             Image(
-              image: AssetImage('assets/pay2.PNG'),
+              image: AssetImage('assets/paymentSuccessful.png'),
               height: 300,
               width: 300,
             ),
             SizedBox(
               height: 30.0,
             ),
-            flatButton("Generate QR CODE", GeneratePage()),
+            flatButton("Generate QR Code", GeneratePage()),
           ],
         ),
       ),

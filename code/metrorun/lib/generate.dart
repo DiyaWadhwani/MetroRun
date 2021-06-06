@@ -43,6 +43,36 @@ class GeneratePageState extends State<GeneratePage> {
             QrImage(
               data: qrData, //plce where the QR Image will be shown
             ),
+            SizedBox(
+              height: 40.0,
+            ),
+            OutlinedButton(
+                child: Text(
+                  'Exit',
+                  style: TextStyle(
+                      color: Colors.green[300], fontWeight: FontWeight.bold),
+                ),
+                style: OutlinedButton.styleFrom(
+                    shape: RoundedRectangleBorder(
+                        side: BorderSide(color: Colors.green, width: 3.0),
+                        borderRadius: BorderRadius.circular(20.0))),
+                onPressed: () {
+                  Navigator.of(context).pushNamed('/homepage');
+                }),
+            SizedBox(height: 20.0),
+            OutlinedButton(
+                child: Text(
+                  'Save QR code until Ride ends',
+                  style: TextStyle(
+                      color: Colors.green[300], fontWeight: FontWeight.bold),
+                ),
+                style: OutlinedButton.styleFrom(
+                    shape: RoundedRectangleBorder(
+                        side: BorderSide(color: Colors.green, width: 3.0),
+                        borderRadius: BorderRadius.circular(20.0))),
+                onPressed: () {
+                  Navigator.of(context).pushNamed('/homepage');
+                }),
           ],
         ),
       ),
