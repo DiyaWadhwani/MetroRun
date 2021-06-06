@@ -7,7 +7,6 @@ import 'package:metrorun/profile_page.dart';
 import 'package:metrorun/qr.dart';
 import 'package:metrorun/rides.dart';
 import 'package:metrorun/ticket.dart';
-import 'package:qr_flutter/qr_flutter.dart';
 import 'package:splashscreen/splashscreen.dart';
 
 import 'login_page.dart';
@@ -22,7 +21,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      home: FirstScreen(),
+      home: Booking(),
       routes: <String, WidgetBuilder>{
         // '/landingpage': (BuildContext context) => new MyApp(),
         // '/signup': (BuildContext context) => new SignUpPage(),
@@ -34,7 +33,7 @@ class MyApp extends StatelessWidget {
         '/bookingpage': (BuildContext context) => new Booking(),
         '/ticketpage': (BuildContext context) => new Ticket(),
         '/paymentPage': (BuildContext context) => new Payment(),
-        '/qrcodepage': (BuildContext context) => new QRCode()
+        '/qrcodepage': (BuildContext context) => new qr()
       },
     );
   }
