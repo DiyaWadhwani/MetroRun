@@ -124,7 +124,7 @@ class LoginPageState extends State<LoginPage>
                             'New to MetroRun?',
                             style: TextStyle(
                               color: Colors.deepPurple.shade900,
-                              fontSize: 20.0,
+                              fontSize: 22.0,
                               // fontWeight: FontWeight.bold,
                             ),
                           ),
@@ -133,7 +133,7 @@ class LoginPageState extends State<LoginPage>
                             'Sign up to create a new account',
                             style: TextStyle(
                               color: Colors.green.shade200,
-                              fontSize: 20.0,
+                              fontSize: 22.0,
                               // fontWeight: FontWeight.bold,
                             ),
                           ),
