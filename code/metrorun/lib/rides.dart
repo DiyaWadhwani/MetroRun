@@ -85,7 +85,7 @@ class RidesPageState extends State<RidesPage> {
                               primary:
                                   Colors.greenAccent[100]!.withOpacity(0.5)),
                           onPressed: () {
-                            Navigator.of(context).pushNamed('/homepage');
+                            Navigator.of(context).pushNamed('/bookingpage');
                           }),
                     )
                   ],

@@ -143,7 +143,8 @@ class _HomePageState extends State<HomePage> {
             children: [
               RotatedBox(quarterTurns: 1, child: buildOption('Tickets', 0)),
               RotatedBox(quarterTurns: 1, child: buildOption('Map', 1)),
-              RotatedBox(quarterTurns: 1, child: buildOption('Wallet', 2)),
+              RotatedBox(
+                  quarterTurns: 1, child: buildOption('Recharge Card', 2)),
               RotatedBox(quarterTurns: 1, child: buildOption('Profile', 3)),
             ],
           ),
