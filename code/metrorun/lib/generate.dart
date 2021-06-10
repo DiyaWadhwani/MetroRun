@@ -17,6 +17,7 @@ String RandomString(int strlen) {
   for (var i = 0; i < strlen; i++) {
     result += chars[rnd.nextInt(chars.length)];
   }
+  //string for qr code - save to hive
   print(result);
   return result;
 }
