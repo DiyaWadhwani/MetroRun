@@ -34,8 +34,8 @@ class _QRState extends State<QR> {
   }
 
   Widget flatButton(String text, Widget widget) {
-    return FlatButton(
-      padding: EdgeInsets.all(15.0),
+    return TextButton(
+      // padding: EdgeInsets.all(15.0),
       onPressed: () async {
         Navigator.of(context)
             .push(MaterialPageRoute(builder: (context) => widget));
@@ -44,9 +44,9 @@ class _QRState extends State<QR> {
         text,
         style: TextStyle(color: Colors.green, fontWeight: FontWeight.bold),
       ),
-      shape: RoundedRectangleBorder(
-          side: BorderSide(color: Colors.green, width: 3.0),
-          borderRadius: BorderRadius.circular(20.0)),
+      // shape: RoundedRectangleBorder(
+      // side: BorderSide(color: Colors.green, width: 3.0),
+      // borderRadius: BorderRadius.circular(20.0)),
     );
   }
 }

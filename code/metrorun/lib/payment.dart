@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 
 import 'package:razorpay_flutter/razorpay_flutter.dart';
+// ignore: import_of_legacy_library_into_null_safe
 import 'package:toast/toast.dart';
-import 'ticket.dart';
 
 double amountToBePaid = 0;
 void sendAmount(double amount) {
@@ -103,8 +103,8 @@ class _PaymentState extends State<Payment> {
             SizedBox(
               height: 12,
             ),
-            RaisedButton(
-              color: Colors.blue,
+            ElevatedButton(
+              // color: Colors.blue,
               child: Text(
                 "Pay",
                 style: TextStyle(color: Colors.white),

@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'color_collection.dart';
 
 class TicketPreview extends StatefulWidget {
   @override
@@ -10,7 +9,7 @@ class _TicketPreviewState extends State<TicketPreview> {
   bool opened = false;
   @override
   Widget build(BuildContext context) {
-    Color color;
+    // Color color;
     return Scaffold(
       body: Center(
         child: Column(

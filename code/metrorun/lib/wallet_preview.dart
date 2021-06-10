@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'color_collection.dart';
 import 'header_design.dart';
 
 class WalletPreview extends StatefulWidget {

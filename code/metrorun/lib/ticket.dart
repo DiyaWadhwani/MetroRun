@@ -1,6 +1,4 @@
 import 'package:flutter/foundation.dart';
-
-import 'color_collection.dart';
 import 'header_design.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
@@ -508,9 +506,9 @@ class TicketState extends State<Ticket> {
                         ButtonTheme(
                           minWidth: 500.0,
                           height: 60.0,
-                          child: RaisedButton(
-                              color: Colors.purple[700],
-                              splashColor: Colors.purpleAccent,
+                          child: ElevatedButton(
+                              // color: Colors.purple[700],
+                              // splashColor: Colors.purpleAccent,
                               child: Text('PAY',
                                   style: TextStyle(
                                     fontSize: 25.0,

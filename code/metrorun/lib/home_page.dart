@@ -1,7 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_icons/flutter_icons.dart';
-import 'rides.dart';
-import 'ticket.dart';
 import 'profile_preview.dart';
 import 'ticketPreview.dart';
 import 'wallet_preview.dart';

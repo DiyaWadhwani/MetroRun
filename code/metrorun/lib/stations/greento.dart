@@ -7,6 +7,7 @@ class Station {
   Station({this.id, this.text});
 }
 
+// ignore: must_be_immutable
 class GreenTo extends StatefulWidget {
   var from;
   var frm;

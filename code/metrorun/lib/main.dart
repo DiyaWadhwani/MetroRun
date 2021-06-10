@@ -1,3 +1,4 @@
+import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:metrorun/booking.dart';
 import 'package:metrorun/home_page.dart';
@@ -7,12 +8,14 @@ import 'package:metrorun/profile_page.dart';
 import 'package:metrorun/qr.dart';
 import 'package:metrorun/rides.dart';
 import 'package:metrorun/ticket.dart';
-import 'package:qr_flutter/qr_flutter.dart';
+// ignore: import_of_legacy_library_into_null_safe
 import 'package:splashscreen/splashscreen.dart';
 
 import 'login_page.dart';
 
-void main() {
+void main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+  await Firebase.initializeApp();
   runApp(MyApp());
 }
 

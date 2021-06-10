@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'color_collection.dart';
 
 final double kDefaultPadding = 5.0;
 final kPrimaryColor = Color(0xFFA5D6A7);

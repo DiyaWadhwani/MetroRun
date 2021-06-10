@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'color_collection.dart';
 import 'header_design.dart';
 import 'stations/greento.dart';
 import 'stations/greenfrom.dart';
@@ -7,6 +6,7 @@ import 'stations/purplefrom.dart';
 import 'stations/purpleto.dart';
 import 'ticket.dart';
 
+// ignore: must_be_immutable
 class Booking extends StatefulWidget {
   // ignore: non_constant_identifier_names
   var from_station, to_station;
