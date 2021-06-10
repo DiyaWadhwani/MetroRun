@@ -66,7 +66,7 @@ class LoginPageState extends State<LoginPage>
                   stops: [0.4, 0.8],
                   colors: [
                     Colors.green.shade200,
-                    Colors.deepPurpleAccent.shade400,
+                    Colors.deepPurpleAccent.shade200,
                   ],
                 ),
               ),
@@ -115,7 +115,7 @@ class LoginPageState extends State<LoginPage>
                     transform: Matrix4.translationValues(
                         delayedAnimation.value * width, 0.0, 0.0),
                     child: Container(
-                      padding: EdgeInsets.only(left: 20.0),
+                      padding: EdgeInsets.only(left: 10.0),
                       child: Column(
                         mainAxisAlignment: MainAxisAlignment.center,
                         children: [
