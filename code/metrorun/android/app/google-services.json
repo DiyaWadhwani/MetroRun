@@ -22,6 +22,14 @@
           }
         },
         {
+          "client_id": "10370540672-cm3o0fivutl88s3asnsg6c0sm1kfeqnd.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.metroapp.metrorun",
+            "certificate_hash": "fbbaf78bbc320b0cb175bb9adfb25464a574f947"
+          }
+        },
+        {
           "client_id": "10370540672-0vjigu44hrnlb8abg1ltej0f0kkp57nt.apps.googleusercontent.com",
           "client_type": 3
         }
