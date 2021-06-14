@@ -1,4 +1,6 @@
 import 'package:flutter/foundation.dart';
+import 'package:metrorun/constants.dart';
+import 'firestore.dart';
 import 'header_design.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
@@ -517,7 +519,10 @@ class TicketState extends State<Ticket> {
                                   )),
                               onPressed: () {
                                 sendAmount(amount);
-                                Navigator.of(context).pushNamed('/paymentPage');
+                                print("Amount Paid : $amount\n");
+                                myAmount = amount;
+                                // Navigator.of(context).pushNamed('/paymentPage');
+                                Navigator.of(context).pushNamed('/qrcodepage');
                                 /*Navigator.push(
                                       context,
                                       MaterialPageRoute(

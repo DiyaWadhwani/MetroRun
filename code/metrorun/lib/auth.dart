@@ -1,12 +1,11 @@
-import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:google_sign_in/google_sign_in.dart';
 import 'package:metrorun/constants.dart';
 
+import 'firestore.dart';
+
 final GoogleSignIn googleSignIn = GoogleSignIn();
 final FirebaseAuth _auth = FirebaseAuth.instance;
-final CollectionReference users =
-    FirebaseFirestore.instance.collection('Users');
 
 Future<User> signInWithGoogle() async {
   final GoogleSignInAccount? googleSignInAccount = await googleSignIn.signIn();
@@ -46,28 +45,4 @@ Future<User> signInWithGoogle() async {
 Future<void> signOutWithGoogle() async {
   await _auth.signOut();
   googleSignIn.disconnect();
-}
-
-Future<void> userExists() async {
-  users.doc(myUid).get().then((DocumentSnapshot documentSnapshot) {
-    if (documentSnapshot.exists) {
-      print("Document exists in db");
-    } else {
-      print("New user signed in");
-      userSetup();
-    }
-  });
-}
-
-Future<void> userSetup() async {
-  users
-      .doc(myUid)
-      .set({
-        'UID': myUid,
-        'Name': myName,
-        'Email ID': myEmail,
-        'PhotoURL': myPhotoUrl
-      })
-      .then((value) => print("New document added to collection - $myUid"))
-      .catchError((error) => print("Failed to add user - $error"));
 }
