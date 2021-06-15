@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 import 'package:metrorun/auth.dart';
 import 'package:metrorun/home_page.dart';
+import 'color_collection.dart';
 
 class LoginPage extends StatefulWidget {
   @override
@@ -125,25 +126,27 @@ class LoginPageState extends State<LoginPage>
                             style: TextStyle(
                               color: Colors.deepPurple.shade900,
                               fontSize: 22.0,
-                              // fontWeight: FontWeight.bold,
+                              fontWeight: FontWeight.bold,
                             ),
                           ),
-                          SizedBox(height: 60.0),
-                          Text(
-                            'Sign up to create a new account',
-                            style: TextStyle(
-                              color: Colors.green.shade200,
-                              fontSize: 22.0,
-                              // fontWeight: FontWeight.bold,
+                          SizedBox(height: 20.0),
+                          Transform(
+                            transform: Matrix4.translationValues(
+                                muchDelayedAnimation.value * width, 0.0, 0.0),
+                            child: Column(
+                              mainAxisAlignment: MainAxisAlignment.center,
+                              children: [
+                                googleSignUpButton(),
+                              ],
                             ),
                           ),
                           SizedBox(height: 20.0),
                           Text(
-                            'OR',
+                            'Existing passenger?',
                             style: TextStyle(
                               color: Colors.green.shade200,
                               fontSize: 20.0,
-                              // fontWeight: FontWeight.bold,
+                              fontWeight: FontWeight.bold,
                             ),
                           ),
                           SizedBox(height: 20.0),
@@ -205,6 +208,96 @@ class LoginPageState extends State<LoginPage>
               )
             ],
           )),
+    );
+  }
+
+  Widget googleSignUpButton() {
+    return OutlinedButton(
+      onPressed: () {
+        print("Google login button clicked");
+        this.user = user;
+        signInWithGoogle().then((user) => {_showMyDialog()});
+      },
+      style: OutlinedButton.styleFrom(
+          // primary: Colors.grey.shade100,
+          backgroundColor: Colors.green.shade200,
+          shadowColor: Colors.red,
+          shape: const RoundedRectangleBorder(
+            borderRadius: BorderRadius.all(Radius.circular(45)),
+          )),
+      child: Padding(
+          padding: EdgeInsets.fromLTRB(0, 10, 0, 10),
+          child: Row(
+            mainAxisAlignment: MainAxisAlignment.center,
+            mainAxisSize: MainAxisSize.min,
+            children: [
+              Image(
+                image: AssetImage('assets/google_logo.png'),
+                height: 25,
+              ),
+              Padding(
+                padding: EdgeInsets.only(left: 10),
+                child: Text('Sign up',
+                    style: TextStyle(
+                      color: Colors.deepPurple.shade800,
+                      fontSize: 20,
+                    )),
+              )
+            ],
+          )),
+    );
+  }
+
+  Future<void> _showMyDialog() async {
+    return showDialog<void>(
+      context: context,
+      barrierDismissible: false, // user must tap button!
+      builder: (BuildContext context) {
+        return AlertDialog(
+          title: Text(
+            'You\'re all signed up!',
+            style: TextStyle(
+                fontWeight: FontWeight.bold, color: Colors.green.shade800),
+          ),
+          content: SingleChildScrollView(
+            child: ListBody(
+              children: <Widget>[
+                Text(
+                  'Account created.',
+                  style: TextStyle(
+                    color: Colors.purple.shade800,
+                  ),
+                ),
+                SizedBox(height: 10.0),
+                Text(
+                  'Sign in to proceed.',
+                  style: TextStyle(color: Colors.green.shade800),
+                ),
+              ],
+            ),
+          ),
+          actions: <Widget>[
+            OutlinedButton(
+              child: Text('Sign in?',
+                  style: TextStyle(
+                    color: Colors.green.shade800,
+                    fontSize: 18.0,
+                  )),
+              style: OutlinedButton.styleFrom(
+                  primary: Colors.green,
+                  shape: RoundedRectangleBorder(
+                      side: BorderSide(color: Colors.green, width: 3.0),
+                      borderRadius: BorderRadius.circular(
+                        20.0,
+                      ))),
+              onPressed: () {
+                Navigator.push(context,
+                    MaterialPageRoute(builder: (context) => HomePage()));
+              },
+            ),
+          ],
+        );
+      },
     );
   }
 }

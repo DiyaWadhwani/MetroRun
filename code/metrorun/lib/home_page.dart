@@ -141,11 +141,11 @@ class _HomePageState extends State<HomePage> {
           child: Row(
             mainAxisAlignment: MainAxisAlignment.spaceEvenly,
             children: [
-              RotatedBox(quarterTurns: 1, child: buildOption('Tickets', 0)),
+              RotatedBox(quarterTurns: 1, child: buildOption('Tickets', 3)),
               RotatedBox(quarterTurns: 1, child: buildOption('Map', 1)),
               RotatedBox(
                   quarterTurns: 1, child: buildOption('Recharge Card', 2)),
-              RotatedBox(quarterTurns: 1, child: buildOption('Profile', 3)),
+              RotatedBox(quarterTurns: 1, child: buildOption('Profile', 0)),
             ],
           ),
         ),
