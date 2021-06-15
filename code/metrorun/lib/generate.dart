@@ -1,7 +1,10 @@
 import 'package:flutter/material.dart';
+import 'package:metrorun/constants.dart';
 import 'package:qr_flutter/qr_flutter.dart';
 import 'dart:math';
 import 'dart:core';
+
+import 'firestore.dart';
 
 class GeneratePage extends StatefulWidget {
   @override
@@ -17,6 +20,7 @@ String RandomString(int strlen) {
   for (var i = 0; i < strlen; i++) {
     result += chars[rnd.nextInt(chars.length)];
   }
+  //string for qr code - save to hive
   print(result);
   return result;
 }
@@ -46,19 +50,19 @@ class GeneratePageState extends State<GeneratePage> {
             SizedBox(
               height: 40.0,
             ),
-            OutlinedButton(
-                child: Text(
-                  'Exit',
-                  style: TextStyle(
-                      color: Colors.green[300], fontWeight: FontWeight.bold),
-                ),
-                style: OutlinedButton.styleFrom(
-                    shape: RoundedRectangleBorder(
-                        side: BorderSide(color: Colors.green, width: 3.0),
-                        borderRadius: BorderRadius.circular(20.0))),
-                onPressed: () {
-                  Navigator.of(context).pushNamed('/homepage');
-                }),
+            // OutlinedButton(
+            //     child: Text(
+            //       'Exit',
+            //       style: TextStyle(
+            //           color: Colors.green[300], fontWeight: FontWeight.bold),
+            //     ),
+            //     style: OutlinedButton.styleFrom(
+            //         shape: RoundedRectangleBorder(
+            //             side: BorderSide(color: Colors.green, width: 3.0),
+            //             borderRadius: BorderRadius.circular(20.0))),
+            //     onPressed: () {
+            //       Navigator.of(context).pushNamed('/homepage');
+            //     }),
             SizedBox(height: 20.0),
             OutlinedButton(
                 child: Text(
@@ -71,6 +75,9 @@ class GeneratePageState extends State<GeneratePage> {
                         side: BorderSide(color: Colors.green, width: 3.0),
                         borderRadius: BorderRadius.circular(20.0))),
                 onPressed: () {
+                  print("Adding ride details to firestore");
+                  myQrString = qrData;
+                  updateRideData();
                   Navigator.of(context).pushNamed('/homepage');
                 }),
           ],

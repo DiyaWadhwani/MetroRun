@@ -66,7 +66,7 @@ class LoginPageState extends State<LoginPage>
                   stops: [0.4, 0.8],
                   colors: [
                     Colors.green.shade200,
-                    Colors.deepPurpleAccent.shade400,
+                    Colors.deepPurpleAccent.shade200,
                   ],
                 ),
               ),
@@ -115,7 +115,7 @@ class LoginPageState extends State<LoginPage>
                     transform: Matrix4.translationValues(
                         delayedAnimation.value * width, 0.0, 0.0),
                     child: Container(
-                      padding: EdgeInsets.only(left: 20.0),
+                      padding: EdgeInsets.only(left: 10.0),
                       child: Column(
                         mainAxisAlignment: MainAxisAlignment.center,
                         children: [
@@ -124,7 +124,7 @@ class LoginPageState extends State<LoginPage>
                             'New to MetroRun?',
                             style: TextStyle(
                               color: Colors.deepPurple.shade900,
-                              fontSize: 20.0,
+                              fontSize: 22.0,
                               // fontWeight: FontWeight.bold,
                             ),
                           ),
@@ -133,7 +133,7 @@ class LoginPageState extends State<LoginPage>
                             'Sign up to create a new account',
                             style: TextStyle(
                               color: Colors.green.shade200,
-                              fontSize: 20.0,
+                              fontSize: 22.0,
                               // fontWeight: FontWeight.bold,
                             ),
                           ),

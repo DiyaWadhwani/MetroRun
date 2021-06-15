@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:metrorun/constants.dart';
 import 'header_design.dart';
 import 'stations/greento.dart';
 import 'stations/greenfrom.dart';
@@ -260,6 +261,11 @@ class _BookingState extends State<Booking> {
                           from_station == null) {
                         showAlertDialog(context);
                       } else {
+                        mySource = from_station;
+                        print("Saved from station to mySource :$mySource");
+                        myDestination = to_station;
+                        print(
+                            "Saved to station to myDestination :$myDestination");
                         Navigator.push(
                             context,
                             MaterialPageRoute(
