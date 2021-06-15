@@ -505,15 +505,22 @@ class TicketState extends State<Ticket> {
                           ),
                         ),
                         SizedBox(height: 20.0),
-                        ButtonTheme(
-                          minWidth: 500.0,
-                          height: 60.0,
+                        ConstrainedBox(
+                          constraints:
+                              BoxConstraints.tightFor(width: 100, height: 40),
                           child: ElevatedButton(
+                              style: ElevatedButton.styleFrom(
+                                  primary: Colors.purple[700],
+                                  shape: RoundedRectangleBorder(
+                                      side: BorderSide(
+                                          color: Colors.green, width: 3.0),
+                                      borderRadius:
+                                          BorderRadius.circular(10.0))),
                               // color: Colors.purple[700],
                               // splashColor: Colors.purpleAccent,
                               child: Text('PAY',
                                   style: TextStyle(
-                                    fontSize: 25.0,
+                                    fontSize: 22.0,
                                     color: Colors.green[200],
                                     fontWeight: FontWeight.w500,
                                   )),
@@ -529,6 +536,7 @@ class TicketState extends State<Ticket> {
                                           builder: (context) => QRCode()));*/
                               }),
                         ),
+                        SizedBox(height: 10.0)
                       ],
                     ),
                   ),
