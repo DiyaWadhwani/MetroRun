@@ -50,6 +50,7 @@ Future<void> updateRideData() async {
           'Amount': myAmount,
           'UID': myUid,
           'Timestamp': Timestamp.now(),
+          'Payment ID': myPaymentId,
         })
         .then((value) => print("New ticket saved - $myUid"))
         .catchError((error) => print("Failed to save ticket - $error"));
