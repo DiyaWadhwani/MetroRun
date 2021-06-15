@@ -149,7 +149,7 @@ class _BookingState extends State<Booking> {
                 style: TextStyle(
                     fontSize: 25.0,
                     fontWeight: FontWeight.w600,
-                    color: Colors.grey)),
+                    color: Colors.black)),
             SizedBox(height: 50.0),
             Row(children: <Widget>[
               SizedBox(width: 5.0),
@@ -236,7 +236,7 @@ class _BookingState extends State<Booking> {
                 style: TextStyle(
                     fontSize: 25.0,
                     fontWeight: FontWeight.w600,
-                    color: Colors.grey)),
+                    color: Colors.black)),
             SizedBox(height: 80.0),
             Padding(
               padding: EdgeInsets.symmetric(horizontal: 100.0),
