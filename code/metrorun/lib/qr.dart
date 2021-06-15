@@ -34,19 +34,22 @@ class _QRState extends State<QR> {
   }
 
   Widget flatButton(String text, Widget widget) {
-    return OutlinedButton(
-      onPressed: () async {
-        Navigator.of(context)
-            .push(MaterialPageRoute(builder: (context) => widget));
-      },
-      child: Text(
-        text,
-        style: TextStyle(color: Colors.green, fontWeight: FontWeight.bold),
-      ),
-      style: OutlinedButton.styleFrom(
-        shape: RoundedRectangleBorder(
-            side: BorderSide(color: Colors.green, width: 3.0),
-            borderRadius: BorderRadius.circular(20.0)),
+    return ConstrainedBox(
+      constraints: BoxConstraints.tightFor(width: 200, height: 40),
+      child: OutlinedButton(
+        onPressed: () async {
+          Navigator.of(context)
+              .push(MaterialPageRoute(builder: (context) => widget));
+        },
+        child: Text(
+          text,
+          style: TextStyle(color: Colors.green, fontWeight: FontWeight.bold),
+        ),
+        style: OutlinedButton.styleFrom(
+          shape: RoundedRectangleBorder(
+              side: BorderSide(color: Colors.green, width: 3.0),
+              borderRadius: BorderRadius.circular(20.0)),
+        ),
       ),
     );
   }

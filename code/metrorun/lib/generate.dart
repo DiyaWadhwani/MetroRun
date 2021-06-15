@@ -42,27 +42,33 @@ class GeneratePageState extends State<GeneratePage> {
         padding: EdgeInsets.all(20.0),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.stretch,
-          mainAxisAlignment: MainAxisAlignment.center,
+          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
           children: <Widget>[
-            QrImage(
-              data: qrData, //plce where the QR Image will be shown
+            Center(
+              child: QrImage(
+                data: qrData,
+                size: 258,
+              ),
             ),
             SizedBox(
               height: 40.0,
             ),
-            // OutlinedButton(
-            //     child: Text(
-            //       'Exit',
-            //       style: TextStyle(
-            //           color: Colors.green[300], fontWeight: FontWeight.bold),
-            //     ),
-            //     style: OutlinedButton.styleFrom(
-            //         shape: RoundedRectangleBorder(
-            //             side: BorderSide(color: Colors.green, width: 3.0),
-            //             borderRadius: BorderRadius.circular(20.0))),
-            //     onPressed: () {
-            //       Navigator.of(context).pushNamed('/homepage');
-            //     }),
+            ConstrainedBox(
+              constraints: BoxConstraints.expand(height: 40, width: 150),
+              child: OutlinedButton(
+                  child: Text(
+                    'Exit',
+                    style: TextStyle(
+                        color: Colors.green[300], fontWeight: FontWeight.bold),
+                  ),
+                  style: OutlinedButton.styleFrom(
+                      shape: RoundedRectangleBorder(
+                          side: BorderSide(color: Colors.green, width: 3.0),
+                          borderRadius: BorderRadius.circular(20.0))),
+                  onPressed: () {
+                    Navigator.of(context).pushNamed('/homepage');
+                  }),
+            ),
             SizedBox(height: 20.0),
             OutlinedButton(
                 child: Text(
