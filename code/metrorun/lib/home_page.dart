@@ -51,21 +51,23 @@ class _HomePageState extends State<HomePage> {
               width: screenWidth - (screenWidth / 4),
               color: Colors.white),
         ),
-        /* Positioned(
+        Positioned(
           top: 35.0,
-          left: 10.0,
+          left: 6.0,
           child: ElevatedButton(
             child: Text(
               'Logout',
-              style: TextStyle(color: Colors.green[800]),
+              style: TextStyle(
+                  color: Colors.grey.shade600,
+                  fontWeight: FontWeight.bold,
+                  fontSize: 18),
             ),
-            style: ElevatedButton.styleFrom(primary: Colors.green[200]),
+            style: ElevatedButton.styleFrom(primary: Colors.green.shade100),
             onPressed: () {
               Navigator.of(context).pushNamed('/loginpage');
             },
           ),
         ),
-        */
         Positioned(
           top: screenHeight - (screenHeight - 100.0),
           left: (screenWidth / 4) + 25.0,
