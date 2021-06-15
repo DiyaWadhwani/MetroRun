@@ -1,14 +1,15 @@
+import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:url_launcher/link.dart';
 import 'header_design.dart';
 import 'package:url_launcher/url_launcher.dart';
 
-class WalletPreview extends StatefulWidget {
+class CardRechargePreview extends StatefulWidget {
   @override
-  _WalletPreviewState createState() => _WalletPreviewState();
+  _CardRechargePreviewState createState() => _CardRechargePreviewState();
 }
 
-class _WalletPreviewState extends State<WalletPreview> {
+class _CardRechargePreviewState extends State<CardRechargePreview> {
   bool opened = false;
   @override
   Widget build(BuildContext context) {
@@ -24,17 +25,23 @@ class _WalletPreviewState extends State<WalletPreview> {
                   SizedBox(
                     height: 20.0,
                   ),
-                  Link(
-                      uri: Uri.parse("https://english.bmrc.co.in/Ticket"),
-                      target: LinkTarget.self,
-                      builder: (context, followLink) {
-                        return TextButton(
-                            onPressed: followLink,
-                            child: Text(
-                              "Recharge Metro Card",
-                              style: TextStyle(color: Colors.green.shade200),
-                            ));
-                      }),
+
+                  new RaisedButton(
+                    onPressed: _launchURL,
+                    child: new Text('Recharge Metro Card'),
+                  ),
+                  // Link(
+                  //     uri: Uri.parse(
+                  //         "https://paytm.com/metro-card-recharge/bengaluru-metro"),
+                  //     target: LinkTarget.self,
+                  //     builder: (context, followLink) {
+                  //       return TextButton(
+                  //           onPressed: followLink,
+                  //           child: Text(
+                  //             "Recharge Metro Card",
+                  //             style: TextStyle(color: Colors.green.shade800),
+                  //           ));
+                  //     }),
                   SizedBox(
                     height: 20.0,
                   ),
@@ -45,6 +52,15 @@ class _WalletPreviewState extends State<WalletPreview> {
         ),
       ),
     );
+  }
+
+  _launchURL() async {
+    const url = 'https://paytm.com/metro-card-recharge/bengaluru-metro';
+    if (await canLaunch(url)) {
+      await launch(url);
+    } else {
+      throw 'Could not launch $url';
+    }
   }
 }
 

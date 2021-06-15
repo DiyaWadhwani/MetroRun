@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'profile_preview.dart';
 import 'ticketPreview.dart';
-import 'wallet_preview.dart';
+import 'card_recharge_preview.dart';
 import 'color_collection.dart';
 import 'map.dart';
 
@@ -18,7 +18,7 @@ class _HomePageState extends State<HomePage> {
   List allOptions = [
     TicketPreview(),
     MapPage(),
-    WalletPreview(),
+    CardRechargePreview(),
     ProfilePreview()
   ];
 
