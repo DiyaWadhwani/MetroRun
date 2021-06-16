@@ -14,6 +14,14 @@
       },
       "oauth_client": [
         {
+          "client_id": "10370540672-57ted0f4hmi6p2ao6gs9nc7q33e4v9t4.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.metroapp.metrorun",
+            "certificate_hash": "d890a78a5210a7ba88e49ee90ef99e5d8fa4b632"
+          }
+        },
+        {
           "client_id": "10370540672-699rp52rsno4ncqnt15sktml6ps2j9il.apps.googleusercontent.com",
           "client_type": 1,
           "android_info": {
