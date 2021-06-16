@@ -4,6 +4,8 @@ import 'package:razorpay_flutter/razorpay_flutter.dart';
 // ignore: import_of_legacy_library_into_null_safe
 import 'package:toast/toast.dart';
 
+import 'constants.dart';
+
 double amountToBePaid = 0;
 void sendAmount(double amount) {
   amountToBePaid = amount;
@@ -66,6 +68,8 @@ class _PaymentState extends State<Payment> {
 
   void handlerPaymentSuccess(PaymentSuccessResponse response) {
     print("Payment success");
+    print("Payment ID : $response.paymentId");
+    myPaymentId = response.paymentId!;
     Toast.show("Payment success", context);
     Navigator.of(context).pushNamed('/qrcodepage');
   }
