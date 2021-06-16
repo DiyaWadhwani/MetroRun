@@ -5,6 +5,7 @@ import 'header_design.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 import 'payment.dart';
+import 'generate.dart';
 
 // ignore: must_be_immutable
 class Ticket extends StatefulWidget {
@@ -528,6 +529,8 @@ class TicketState extends State<Ticket> {
                                 sendAmount(amount);
                                 print("Amount Paid : $amount\n");
                                 myAmount = amount;
+                                senddetails(from_station, to_station,
+                                    currentdate, currenttime, amount);
                                 Navigator.of(context).pushNamed('/paymentPage');
                                 // Navigator.of(context).pushNamed('/qrcodepage');
                                 /*Navigator.push(

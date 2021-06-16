@@ -3,8 +3,10 @@ import 'package:flutter/material.dart';
 import 'package:razorpay_flutter/razorpay_flutter.dart';
 // ignore: import_of_legacy_library_into_null_safe
 import 'package:toast/toast.dart';
+import 'ticket.dart';
 
 import 'constants.dart';
+import 'firestore.dart';
 
 double amountToBePaid = 0;
 void sendAmount(double amount) {
@@ -70,7 +72,7 @@ class _PaymentState extends State<Payment> {
     print("Payment success");
     print("Payment ID : $response.paymentId");
     myPaymentId = response.paymentId!;
-    Toast.show("Payment success", context);
+    Toast.show("Payment successful", context);
     Navigator.of(context).pushNamed('/qrcodepage');
   }
 
@@ -114,7 +116,11 @@ class _PaymentState extends State<Payment> {
                 style: TextStyle(color: Colors.white),
               ),
               onPressed: () {
-                openCheckout();
+                // updateRideDataLocally(from, to ,date, time, amountToBePaid);
+
+                //updateRideDataLocally(from, to, date, time, amountToBePaid);
+                Navigator.of(context).pushNamed('/qrcodepage');
+                //openCheckout();
               },
             )
           ],

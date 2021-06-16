@@ -6,6 +6,16 @@ import 'dart:core';
 
 import 'firestore.dart';
 
+var from, to, date, time;
+double amountToBePaid = 0.0;
+senddetails(var from_, var to_, var date_, time_, double _amount) {
+  from = from_;
+  to = to_;
+  date_ = date;
+  time_ = time;
+  amountToBePaid = _amount;
+}
+
 class GeneratePage extends StatefulWidget {
   @override
   State<StatefulWidget> createState() => GeneratePageState();
@@ -41,7 +51,6 @@ class GeneratePageState extends State<GeneratePage> {
       body: Container(
         padding: EdgeInsets.all(20.0),
         child: Column(
-          crossAxisAlignment: CrossAxisAlignment.stretch,
           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
           children: <Widget>[
             Center(
@@ -50,18 +59,16 @@ class GeneratePageState extends State<GeneratePage> {
                 size: 258,
               ),
             ),
-            SizedBox(
-              height: 40.0,
-            ),
             ConstrainedBox(
-              constraints: BoxConstraints.expand(height: 40, width: 150),
+              constraints: BoxConstraints.expand(height: 40, width: 100),
               child: OutlinedButton(
                   child: Text(
                     'Exit',
                     style: TextStyle(
-                        color: Colors.green[300], fontWeight: FontWeight.bold),
+                        color: Colors.black, fontWeight: FontWeight.bold),
                   ),
                   style: OutlinedButton.styleFrom(
+                      backgroundColor: Colors.green.shade300,
                       shape: RoundedRectangleBorder(
                           side: BorderSide(color: Colors.green, width: 3.0),
                           borderRadius: BorderRadius.circular(20.0))),
@@ -69,23 +76,26 @@ class GeneratePageState extends State<GeneratePage> {
                     Navigator.of(context).pushNamed('/homepage');
                   }),
             ),
-            SizedBox(height: 20.0),
-            OutlinedButton(
-                child: Text(
-                  'Save QR code until Ride ends',
-                  style: TextStyle(
-                      color: Colors.green[300], fontWeight: FontWeight.bold),
-                ),
-                style: OutlinedButton.styleFrom(
-                    shape: RoundedRectangleBorder(
-                        side: BorderSide(color: Colors.green, width: 3.0),
-                        borderRadius: BorderRadius.circular(20.0))),
-                onPressed: () {
-                  print("Adding ride details to firestore");
-                  myQrString = qrData;
-                  updateRideData();
-                  Navigator.of(context).pushNamed('/homepage');
-                }),
+            ConstrainedBox(
+              constraints: BoxConstraints.expand(height: 40, width: 250),
+              child: OutlinedButton(
+                  child: Text(
+                    'Save QR code until Ride ends',
+                    style: TextStyle(
+                        color: Colors.black, fontWeight: FontWeight.bold),
+                  ),
+                  style: OutlinedButton.styleFrom(
+                      backgroundColor: Colors.green.shade300,
+                      shape: RoundedRectangleBorder(
+                          side: BorderSide(color: Colors.green, width: 3.0),
+                          borderRadius: BorderRadius.circular(20.0))),
+                  onPressed: () {
+                    print("Adding ride details to firestore");
+                    myQrString = qrData;
+                    updateRideDataLocally(from, to, date, time, amountToBePaid);
+                    Navigator.of(context).pushNamed('/homepage');
+                  }),
+            ),
           ],
         ),
       ),
