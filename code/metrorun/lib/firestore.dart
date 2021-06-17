@@ -1,14 +1,13 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:metrorun/rides.dart';
 
 import 'constants.dart';
 
 final FirebaseFirestore db = FirebaseFirestore.instance;
 
 final CollectionReference users = db.collection('Users');
-final CollectionReference rides = users
-    .doc(myUid)
-    .collection('Ride Data')
-    .orderBy('Timestamp') as CollectionReference<Object?>;
+final CollectionReference rides = users.doc(myUid).collection('Ride Data');
+// .orderBy('Timestamp') as CollectionReference<Object?>;
 
 Future<void> userExists() async {
   print("------entering userExists()------");
@@ -39,21 +38,40 @@ Future<void> userSetup() async {
 }
 
 Future<void> updateRideData() async {
-  print("------entering updateRideData()------");
-  users.doc(myUid).get().then((DocumentSnapshot documentSnapshot) {
-    rides
-        .doc(myQrString)
-        .set({
-          'To': myDestination,
-          'From': mySource,
-          'QR GenString': myQrString,
-          'Amount': myAmount,
-          'UID': myUid,
-          'Timestamp': Timestamp.now(),
-          'Payment ID': myPaymentId,
-        })
-        .then((value) => print("New ticket saved - $myUid"))
-        .catchError((error) => print("Failed to save ticket - $error"));
-  });
-  print("------exiting updateRideData()------");
+  DocumentReference documentReferencer = rides.doc(myQrString);
+
+  Map<String, dynamic> data = <String, dynamic>{
+    'To': myDestination,
+    'From': mySource,
+    'QR GenString': myQrString,
+    'Amount': myAmount,
+    'UID': myUid,
+    'Timestamp': Timestamp.now(),
+    'Payment ID': myPaymentId,
+  };
+
+  await documentReferencer
+      .set(data)
+      .whenComplete(() => print("Rides updated on the database!"))
+      .catchError((e) => print(e));
 }
+
+// Future<void> updateRideData() async {
+//   print("------entering updateRideData()------");
+//   users.doc(myUid).get().then((DocumentSnapshot documentSnapshot) {
+//     rides
+//         .doc(myQrString)
+//         .set({
+//           'To': myDestination,
+//           'From': mySource,
+//           'QR GenString': myQrString,
+//           'Amount': myAmount,
+//           'UID': myUid,
+//           'Timestamp': Timestamp.now(),
+//           'Payment ID': myPaymentId,
+//         })
+//         .then((value) => print("New ticket saved - $myUid"))
+//         .catchError((error) => print("Failed to save ticket - $error"));
+//   });
+//   print("------exiting updateRideData()------");
+// }
