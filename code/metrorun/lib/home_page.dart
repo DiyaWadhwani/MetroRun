@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:easy_localization/easy_localization.dart';
-import 'package:metrorun/login_page.dart';
 import 'lang/language.dart';
 import 'profile_preview.dart';
 import 'ticketPreview.dart';
@@ -38,7 +37,7 @@ class _HomePageState extends State<HomePage> {
     TicketPreview(),
     MapPage(),
     CardRechargePreview(),
-    ProfilePreview(),
+    ProfilePreview()
   ];
 
   List isSelected = [true, false, false, false, false, false];
@@ -70,23 +69,23 @@ class _HomePageState extends State<HomePage> {
               width: screenWidth - (screenWidth / 4),
               color: Colors.white),
         ),
-        Positioned(
-          top: 35.0,
-          left: 6.0,
-          child: ElevatedButton(
-            child: Text(
-              LocaleKeys.Logout.tr(),
-              style: TextStyle(
-                  color: Colors.grey.shade600,
-                  fontWeight: FontWeight.bold,
-                  fontSize: 18),
-            ),
-            style: ElevatedButton.styleFrom(primary: Colors.green.shade100),
-            onPressed: () {
-              Navigator.of(context).pushNamed('/loginpage');
-            },
-          ),
-        ),
+        // Positioned(
+        //   top: 35.0,
+        //   left: 6.0,
+        //   child: ElevatedButton(
+        //     child: Text(
+        //       LocaleKeys.Logout.tr(),
+        //       style: TextStyle(
+        //           color: Colors.grey.shade600,
+        //           fontWeight: FontWeight.bold,
+        //           fontSize: 18),
+        //     ),
+        //     style: ElevatedButton.styleFrom(primary: Colors.green.shade100),
+        //     onPressed: () {
+        //       Navigator.of(context).pushNamed('/loginpage');
+        //     },
+        //   ),
+        // ),
         Positioned(
           top: screenHeight - (screenHeight - 100.0),
           left: (screenWidth / 4) + 25.0,
@@ -182,7 +181,7 @@ class _HomePageState extends State<HomePage> {
         quarterTurns: 3,
         child: Container(
           width: MediaQuery.of(context).size.height - 100.0,
-          height: MediaQuery.of(context).size.width / 5,
+          height: MediaQuery.of(context).size.width / 4.5,
           child: Row(
             mainAxisAlignment: MainAxisAlignment.spaceEvenly,
             children: [
@@ -197,7 +196,8 @@ class _HomePageState extends State<HomePage> {
                   quarterTurns: 1,
                   child: buildOption(LocaleKeys.Ticekts.tr(), 0)),
               RotatedBox(
-                  quarterTurns: 1, child: buildOption(LocaleKeys.Logout, 4)),
+                  quarterTurns: 1,
+                  child: buildOption(LocaleKeys.Logout.tr(), 4)),
             ],
           ),
         ),

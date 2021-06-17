@@ -8,7 +8,7 @@ abstract class LocaleKeys {
   static const Profile = 'Profile';
   static const Card = 'Card';
   static const Map = 'Map';
-  static const Tickets = 'Tickets';
+  static const Ticekts = 'Ticekts';
   static const View_Profile = 'View_Profile';
   static const View_Rides = 'View_Rides';
   static const View_map = 'View_map';
