@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'generate.dart';
+import 'translations/locale_keys.g.dart';
+import 'package:easy_localization/easy_localization.dart';
 
 class QR extends StatefulWidget {
   @override
@@ -26,7 +28,8 @@ class _QRState extends State<QR> {
             SizedBox(
               height: 30.0,
             ),
-            flatButton("Generate QR Code", GeneratePage()),
+            flatButton(
+              LocaleKeys.generate_qr_code.tr(), GeneratePage()),
           ],
         ),
       ),

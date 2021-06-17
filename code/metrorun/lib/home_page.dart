@@ -1,9 +1,28 @@
 import 'package:flutter/material.dart';
+import 'package:easy_localization/easy_localization.dart';
+import 'package:metrorun/login_page.dart';
+import 'lang/language.dart';
 import 'profile_preview.dart';
 import 'ticketPreview.dart';
 import 'card_recharge_preview.dart';
 import 'color_collection.dart';
 import 'map.dart';
+import 'translations/locale_keys.g.dart';
+
+class Language {
+  final int id;
+  final String name;
+  final String languageCode;
+
+  Language(this.id, this.name, this.languageCode);
+
+  static List<Language> languageList() {
+    return <Language>[
+      Language(1, "English", "en"),
+      Language(2, "ಕನ್ನಡ", "kn"),
+    ];
+  }
+}
 
 class HomePage extends StatefulWidget {
   @override
@@ -19,10 +38,10 @@ class _HomePageState extends State<HomePage> {
     TicketPreview(),
     MapPage(),
     CardRechargePreview(),
-    ProfilePreview()
+    ProfilePreview(),
   ];
 
-  List isSelected = [true, false, false, false, false];
+  List isSelected = [true, false, false, false, false, false];
 
   @override
   Widget build(BuildContext context) {
@@ -56,7 +75,7 @@ class _HomePageState extends State<HomePage> {
           left: 6.0,
           child: ElevatedButton(
             child: Text(
-              'Logout',
+              LocaleKeys.Logout.tr(),
               style: TextStyle(
                   color: Colors.grey.shade600,
                   fontWeight: FontWeight.bold,
@@ -75,7 +94,7 @@ class _HomePageState extends State<HomePage> {
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               Text(
-                'Welcome home!',
+                LocaleKeys.Welcome.tr(),
                 style: TextStyle(
                   color: Colors.green[800],
                   fontSize: 30.0,
@@ -83,9 +102,33 @@ class _HomePageState extends State<HomePage> {
                 ),
               ),
               SizedBox(height: 10.0),
-              Text(
+              /*Text(
                 'What would you like to do?',
                 style: TextStyle(color: Colors.grey[700], fontSize: 15.0),
+              ),*/
+              DropdownButton<Language>(
+                //underline: SizedBox(),
+                hint: Text(
+                  LocaleKeys.Language.tr(),
+                  style: TextStyle(
+                      color: Colors.black,
+                      fontSize: 14,
+                      fontWeight: FontWeight.w500),
+                ),
+                onChanged: (Language? language) {
+                  context.setLocale(Locale(language!.languageCode));
+                },
+                items: Language.languageList()
+                    .map<DropdownMenuItem<Language>>(
+                      (e) => DropdownMenuItem<Language>(
+                        value: e,
+                        child: Row(
+                          mainAxisAlignment: MainAxisAlignment.spaceAround,
+                          children: <Widget>[Text(e.name)],
+                        ),
+                      ),
+                    )
+                    .toList(),
               ),
 
               /*Container(
@@ -143,10 +186,18 @@ class _HomePageState extends State<HomePage> {
           child: Row(
             mainAxisAlignment: MainAxisAlignment.spaceEvenly,
             children: [
-              RotatedBox(quarterTurns: 1, child: buildOption('Profile', 3)),
-              RotatedBox(quarterTurns: 1, child: buildOption('Map', 1)),
-              RotatedBox(quarterTurns: 1, child: buildOption('Card', 2)),
-              RotatedBox(quarterTurns: 1, child: buildOption('Tickets', 0)),
+              RotatedBox(
+                  quarterTurns: 1,
+                  child: buildOption(LocaleKeys.Profile.tr(), 3)),
+              RotatedBox(
+                  quarterTurns: 1, child: buildOption(LocaleKeys.Map.tr(), 1)),
+              RotatedBox(
+                  quarterTurns: 1, child: buildOption(LocaleKeys.Card.tr(), 2)),
+              RotatedBox(
+                  quarterTurns: 1,
+                  child: buildOption(LocaleKeys.Ticekts.tr(), 0)),
+              RotatedBox(
+                  quarterTurns: 1, child: buildOption(LocaleKeys.Logout, 4)),
             ],
           ),
         ),

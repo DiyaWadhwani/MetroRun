@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'translations/locale_keys.g.dart';
+import 'package:easy_localization/easy_localization.dart';
 
 class TicketPreview extends StatefulWidget {
   @override
@@ -18,7 +20,7 @@ class _TicketPreviewState extends State<TicketPreview> {
               constraints: BoxConstraints.tightFor(width: 100, height: 100),
               child: ElevatedButton(
                 child: Text(
-                  'Book Tickets',
+                  LocaleKeys.Book_Tickets.tr(),
                   style: TextStyle(fontSize: 18, color: Colors.green[900]),
                   textAlign: TextAlign.center,
                 ),
@@ -36,7 +38,7 @@ class _TicketPreviewState extends State<TicketPreview> {
               constraints: BoxConstraints.tightFor(width: 100, height: 100),
               child: ElevatedButton(
                 child: Text(
-                  'View Active Ticket',
+                  LocaleKeys.View_Active_Ticket.tr(),
                   style: TextStyle(fontSize: 18, color: Colors.green[900]),
                   textAlign: TextAlign.center,
                 ),

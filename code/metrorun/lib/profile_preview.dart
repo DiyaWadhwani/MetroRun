@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-
+import 'translations/locale_keys.g.dart';
+import 'package:easy_localization/easy_localization.dart';
 class ProfilePreview extends StatefulWidget {
   @override
   _ProfilePreviewState createState() => _ProfilePreviewState();
@@ -16,7 +17,7 @@ class _ProfilePreviewState extends State<ProfilePreview> {
               constraints: BoxConstraints.tightFor(width: 100, height: 100),
               child: ElevatedButton(
                 child: Text(
-                  'View Profile',
+                  LocaleKeys.View_Profile.tr(),
                   style: TextStyle(fontSize: 18, color: Colors.green[900]),
                   textAlign: TextAlign.center,
                 ),
@@ -34,7 +35,7 @@ class _ProfilePreviewState extends State<ProfilePreview> {
               constraints: BoxConstraints.tightFor(width: 100, height: 100),
               child: ElevatedButton(
                 child: Text(
-                  'View Rides',
+                  LocaleKeys.View_Rides.tr(),
                   style: TextStyle(fontSize: 18, color: Colors.green[900]),
                   textAlign: TextAlign.center,
                 ),

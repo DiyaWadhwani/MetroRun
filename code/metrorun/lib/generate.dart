@@ -3,18 +3,9 @@ import 'package:metrorun/constants.dart';
 import 'package:qr_flutter/qr_flutter.dart';
 import 'dart:math';
 import 'dart:core';
-
+import 'translations/locale_keys.g.dart';
+import 'package:easy_localization/easy_localization.dart';
 import 'firestore.dart';
-
-var from, to, date, time;
-double amountToBePaid = 0.0;
-senddetails(var from_, var to_, var date_, time_, double _amount) {
-  from = from_;
-  to = to_;
-  date_ = date;
-  time_ = time;
-  amountToBePaid = _amount;
-}
 
 class GeneratePage extends StatefulWidget {
   @override
@@ -43,8 +34,8 @@ class GeneratePageState extends State<GeneratePage> {
     return Scaffold(
       appBar: AppBar(
         backgroundColor: Colors.green[300],
-        title:
-            Text('Your unique QR Code', style: TextStyle(color: Colors.black)),
+        title: Text(LocaleKeys.Your_unique_QR_Code.tr(),
+            style: TextStyle(color: Colors.black)),
         centerTitle: true,
         actions: <Widget>[],
       ),
@@ -80,7 +71,7 @@ class GeneratePageState extends State<GeneratePage> {
               constraints: BoxConstraints.expand(height: 40, width: 250),
               child: OutlinedButton(
                   child: Text(
-                    'Save QR code until Ride ends',
+                    LocaleKeys.save_qr_code.tr(),
                     style: TextStyle(
                         color: Colors.black, fontWeight: FontWeight.bold),
                   ),
@@ -92,7 +83,7 @@ class GeneratePageState extends State<GeneratePage> {
                   onPressed: () {
                     print("Adding ride details to firestore");
                     myQrString = qrData;
-                    updateRideDataLocally(from, to, date, time, amountToBePaid);
+                    updateRideData();
                     Navigator.of(context).pushNamed('/homepage');
                   }),
             ),

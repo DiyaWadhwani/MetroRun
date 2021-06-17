@@ -1,12 +1,10 @@
 import 'package:flutter/material.dart';
-
 import 'package:razorpay_flutter/razorpay_flutter.dart';
 // ignore: import_of_legacy_library_into_null_safe
 import 'package:toast/toast.dart';
-import 'ticket.dart';
-
 import 'constants.dart';
-import 'firestore.dart';
+import 'translations/locale_keys.g.dart';
+import 'package:easy_localization/easy_localization.dart';
 
 double amountToBePaid = 0;
 void sendAmount(double amount) {
@@ -72,7 +70,7 @@ class _PaymentState extends State<Payment> {
     print("Payment success");
     print("Payment ID : $response.paymentId");
     myPaymentId = response.paymentId!;
-    Toast.show("Payment successful", context);
+    Toast.show("Payment success", context);
     Navigator.of(context).pushNamed('/qrcodepage');
   }
 
@@ -91,7 +89,7 @@ class _PaymentState extends State<Payment> {
     return Scaffold(
       appBar: AppBar(
         backgroundColor: Colors.purple.shade800,
-        title: Text("Payment"),
+        title: Text(LocaleKeys.Payment.tr()),
       ),
       body: Padding(
         padding: const EdgeInsets.all(30.0),
@@ -103,7 +101,7 @@ class _PaymentState extends State<Payment> {
                   prefixText: _controller.text,
                   prefixStyle: TextStyle(
                       color: Colors.black, fontWeight: FontWeight.bold),
-                  helperText: "Amount to be paid",
+                  helperText: LocaleKeys.Amount_to_be_paid.tr(),
                   helperStyle: TextStyle(fontSize: 15.0)),
             ),
             SizedBox(
@@ -112,13 +110,10 @@ class _PaymentState extends State<Payment> {
             ElevatedButton(
               // color: Colors.blue,
               child: Text(
-                "Pay",
+                LocaleKeys.Pay.tr(),
                 style: TextStyle(color: Colors.white),
               ),
               onPressed: () {
-                // updateRideDataLocally(from, to ,date, time, amountToBePaid);
-
-                //updateRideDataLocally(from, to, date, time, amountToBePaid);
                 Navigator.of(context).pushNamed('/qrcodepage');
                 //openCheckout();
               },

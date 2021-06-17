@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import '../booking.dart';
+import 'package:metrorun/translations/locale_keys.g.dart';
+import 'package:easy_localization/easy_localization.dart';
 
 class Station {
   var text;
@@ -21,23 +23,23 @@ class _PurpleToState extends State<PurpleTo> {
   _PurpleToState({this.from, this.frm});
 
   List<Station> stations = [
-    Station(id: 1, text: 'Baiyyappanahalli'),
-    Station(id: 2, text: 'Swami Vivekananda Road'),
-    Station(id: 3, text: 'Indiranagar'),
-    Station(id: 4, text: 'Halasuru'),
-    Station(id: 5, text: 'Trinity'),
-    Station(id: 6, text: 'Mahatma Gandhi Road'),
-    Station(id: 7, text: 'Cubbon Park'),
-    Station(id: 8, text: 'Vidhana Soudha'),
-    Station(id: 9, text: 'Sir M Vishweshwarayya Central College'),
-    Station(id: 10, text: 'Nadaprabhu Kempegowda Majestic'),
-    Station(id: 11, text: 'KSR City Railway Station'),
-    Station(id: 12, text: 'Magadi Road'),
-    Station(id: 13, text: 'Hosahalli'),
-    Station(id: 14, text: 'Vijayanagar'),
-    Station(id: 15, text: 'Attiguppe'),
-    Station(id: 16, text: 'Deepanjali Nagar'),
-    Station(id: 17, text: 'Mysuru Road')
+    Station(id: 1, text:LocaleKeys.Baiyyappanahalli.tr()),
+    Station(id: 2, text: LocaleKeys.Swami_Vivekananda_Road.tr()),
+    Station(id: 3, text: LocaleKeys.Indiranagar.tr()),
+    Station(id: 4, text: LocaleKeys.Halasuru.tr()),
+    Station(id: 5, text: LocaleKeys.Trinity.tr()),
+    Station(id: 6, text: LocaleKeys.Mahatma_Gandhi_Road.tr()),
+    Station(id: 7, text: LocaleKeys.Cubbon_Park.tr()),
+    Station(id: 8, text: LocaleKeys.Vidhana_Soudha.tr()),
+    Station(id: 9, text: LocaleKeys.Sir_M_Vishweshwarayya_Central_College.tr()),
+    Station(id: 10, text: LocaleKeys.Nadaprabhu_Kempegowda_Majestic.tr()),
+    Station(id: 11, text: LocaleKeys.KSR_City_Railway_Statio.tr()),
+    Station(id: 12, text: LocaleKeys.Magadi_Road.tr()),
+    Station(id: 13, text: LocaleKeys.Hosahalli.tr()),
+    Station(id: 14, text: LocaleKeys.Vijayanagar.tr()),
+    Station(id: 15, text: LocaleKeys.Attiguppe.tr()),
+    Station(id: 16, text: LocaleKeys.Deepanjali_Nagar.tr()),
+    Station(id: 17, text: LocaleKeys.Mysuru_Road.tr())
   ];
   Widget cardtemplate(station) {
     return Card(

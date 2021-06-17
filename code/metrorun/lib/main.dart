@@ -1,3 +1,4 @@
+import 'package:easy_localization/easy_localization.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:metrorun/booking.dart';
@@ -10,13 +11,25 @@ import 'package:metrorun/rides.dart';
 import 'package:metrorun/ticket.dart';
 // ignore: import_of_legacy_library_into_null_safe
 import 'package:splashscreen/splashscreen.dart';
-
 import 'login_page.dart';
+import 'translations/codegen_loader.g.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
+  await EasyLocalization.ensureInitialized();
   await Firebase.initializeApp();
-  runApp(MyApp());
+  runApp(
+    EasyLocalization(
+      path: 'assets/translations',
+      supportedLocales:[
+        Locale('en'),
+        Locale('kn'),
+      ],
+      fallbackLocale: Locale('en'),
+      assetLoader: CodegenLoader(),
+      child: MyApp()
+    )
+    );
 }
 
 class MyApp extends StatelessWidget {
@@ -25,6 +38,9 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
+      supportedLocales: context.supportedLocales,
+      localizationsDelegates: context.localizationDelegates,
+      locale: context.locale,
       home: FirstScreen(),
       routes: <String, WidgetBuilder>{
         // '/landingpage': (BuildContext context) => new MyApp(),

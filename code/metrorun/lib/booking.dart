@@ -6,6 +6,8 @@ import 'stations/greenfrom.dart';
 import 'stations/purplefrom.dart';
 import 'stations/purpleto.dart';
 import 'ticket.dart';
+import 'translations/locale_keys.g.dart';
+import 'package:easy_localization/easy_localization.dart';
 
 // ignore: must_be_immutable
 class Booking extends StatefulWidget {
@@ -71,7 +73,7 @@ class _BookingState extends State<Booking> {
                 Container(
                   margin: EdgeInsets.fromLTRB(140, 0, 0, 10),
                   child: Text(
-                    'From?',
+                    LocaleKeys.Fromm.tr(),
                     style: TextStyle(
                       color: Colors.purple,
                       fontWeight: FontWeight.bold,
@@ -95,7 +97,7 @@ class _BookingState extends State<Booking> {
                             borderRadius: BorderRadius.circular(20.0)),
                       ),
                       child: Text(
-                        "Green line",
+                        LocaleKeys.greenline.tr(),
                         style: TextStyle(
                             color: Colors.green[700],
                             fontWeight: FontWeight.bold,
@@ -116,7 +118,7 @@ class _BookingState extends State<Booking> {
                 Expanded(
                   child: ElevatedButton(
                       child: Text(
-                        "Purple line",
+                        LocaleKeys.purpleline.tr(),
                         style: TextStyle(
                             color: Colors.purple[700],
                             fontWeight: FontWeight.bold,
@@ -144,7 +146,7 @@ class _BookingState extends State<Booking> {
               ],
             ),
             SizedBox(height: 20.0),
-            Text(from_station ?? 'Select Line',
+            Text(from_station ?? LocaleKeys.selectline.tr(),
                 textAlign: TextAlign.center,
                 style: TextStyle(
                     fontSize: 25.0,
@@ -156,7 +158,7 @@ class _BookingState extends State<Booking> {
               Container(
                 margin: EdgeInsets.fromLTRB(160, 10, 0, 10),
                 child: Text(
-                  'To?',
+                  LocaleKeys.Too.tr(),
                   style: TextStyle(
                     color: Colors.green[700],
                     fontWeight: FontWeight.bold,
@@ -179,7 +181,7 @@ class _BookingState extends State<Booking> {
                             borderRadius: BorderRadius.circular(20.0)),
                       ),
                       child: Text(
-                        "Green line",
+                        LocaleKeys.greenline.tr(),
                         style: TextStyle(
                             color: Colors.green[700],
                             fontWeight: FontWeight.bold,
@@ -209,7 +211,7 @@ class _BookingState extends State<Booking> {
                             borderRadius: BorderRadius.circular(20.0)),
                       ),
                       child: Text(
-                        "Purple line",
+                        LocaleKeys.purpleline.tr(),
                         style: TextStyle(
                             color: Colors.purple[700],
                             fontWeight: FontWeight.bold,
@@ -231,7 +233,7 @@ class _BookingState extends State<Booking> {
               ],
             ),
             SizedBox(height: 20.0),
-            Text(to_station ?? 'Select Line',
+            Text(to_station ?? LocaleKeys.selectline.tr(),
                 textAlign: TextAlign.center,
                 style: TextStyle(
                     fontSize: 25.0,
@@ -249,7 +251,8 @@ class _BookingState extends State<Booking> {
                       ),
                       primary: kPrimaryColor,
                     ),
-                    child: Text('Proceed',
+                    child: Text(
+                      LocaleKeys.proceed.tr(),
                         style: TextStyle(
                           fontSize: 25.0,
                           color: Colors.black,
@@ -288,7 +291,7 @@ class _BookingState extends State<Booking> {
 
   showAlertDialog(BuildContext context) {
     Widget okButton = TextButton(
-      child: Text("OK"),
+      child: Text(LocaleKeys.ok.tr()),
       onPressed: () {
         Navigator.of(context).pop();
       },
@@ -296,8 +299,8 @@ class _BookingState extends State<Booking> {
 
     // Create AlertDialog
     AlertDialog alert = AlertDialog(
-      title: Text("Error"),
-      content: Text("Select route to proceed"),
+      title: Text(LocaleKeys.error.tr()),
+      content: Text(LocaleKeys.Select_route_to_proceed.tr()),
       actions: [
         okButton,
       ],

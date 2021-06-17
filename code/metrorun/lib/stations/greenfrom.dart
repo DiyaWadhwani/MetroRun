@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:metrorun/booking.dart';
+import 'package:easy_localization/easy_localization.dart';
+import 'package:metrorun/translations/locale_keys.g.dart';
 
 class Station {
   var text;
@@ -13,30 +15,30 @@ class GreenFrom extends StatefulWidget {
 
 class _GreenFromState extends State<GreenFrom> {
   List<Station> stations = [
-    Station(id: 1, text: 'Yelachenahalli'),
-    Station(id: 2, text: 'Jayaprakash Nagar'),
-    Station(id: 3, text: 'Banashankari'),
-    Station(id: 4, text: 'Rashtriya Vidyalaya Road'),
-    Station(id: 5, text: 'Jayanagar'),
-    Station(id: 6, text: 'South End Circle'),
-    Station(id: 7, text: 'Lalbagh'),
-    Station(id: 8, text: 'National College'),
-    Station(id: 9, text: 'K.R.Market'),
-    Station(id: 10, text: 'Chickpete'),
-    Station(id: 11, text: 'Nadaprabhu Kempegowda Station Majestic'),
-    Station(id: 12, text: 'Mantri Square Sampige Road'),
-    Station(id: 13, text: 'Srirampura'),
-    Station(id: 14, text: 'Kuvempu Road'),
-    Station(id: 15, text: 'Rajajinagar'),
-    Station(id: 16, text: 'Mahalakshmi layout'),
-    Station(id: 17, text: 'Sandal Soap Factory'),
-    Station(id: 18, text: 'Yeshwantpur'),
-    Station(id: 19, text: 'Gorguntepalya'),
-    Station(id: 20, text: 'Peenya'),
-    Station(id: 21, text: 'Peenya Industry'),
-    Station(id: 22, text: 'Jalahalli'),
-    Station(id: 23, text: 'Dasarahalli'),
-    Station(id: 24, text: 'Nagasandra')
+    Station(id: 1, text: LocaleKeys.Yelachenahalli.tr()),
+    Station(id: 2, text: LocaleKeys.Jayaprakash_Nagar.tr()),
+    Station(id: 3, text: LocaleKeys.Banashankari.tr()),
+    Station(id: 4, text: LocaleKeys.Rashtriya_Vidyalaya_Road.tr()),
+    Station(id: 5, text: LocaleKeys.Jayanagar.tr()),
+    Station(id: 6, text: LocaleKeys.South_End_Circle.tr()),
+    Station(id: 7, text: LocaleKeys.Lalbag.tr()),
+    Station(id: 8, text: LocaleKeys.National_College.tr()),
+    Station(id: 9, text: LocaleKeys.KRMarket.tr()),
+    Station(id: 10, text: LocaleKeys.Chickpete.tr()),
+    Station(id: 11, text: LocaleKeys.Nadaprabhu_Kempegowda_Station_Majestic.tr()),
+    Station(id: 12, text: LocaleKeys.Mantri_Square_Sampige_Road.tr()),
+    Station(id: 13, text: LocaleKeys.Srirampura.tr()),
+    Station(id: 14, text: LocaleKeys.Kuvempu_Road.tr()),
+    Station(id: 15, text: LocaleKeys.Rajajinagar.tr()),
+    Station(id: 16, text: LocaleKeys.Mahalakshmi_layout.tr()),
+    Station(id: 17, text: LocaleKeys.Sandal_Soap_Factor.tr()),
+    Station(id: 18, text: LocaleKeys.Yeshwantpur.tr()),
+    Station(id: 19, text: LocaleKeys.Gorguntepalya.tr()),
+    Station(id: 20, text: LocaleKeys.Peenya.tr()),
+    Station(id: 21, text: LocaleKeys.Peenya_Industry.tr()),
+    Station(id: 22, text: LocaleKeys.Jalahalli.tr()),
+    Station(id: 23, text: LocaleKeys.Dasarahalli.tr()),
+    Station(id: 24, text: LocaleKeys.Nagasandra.tr())
   ];
   Widget cardtemplate(station) {
     return Card(

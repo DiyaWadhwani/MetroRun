@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'auth.dart';
 import 'constants.dart';
+import 'translations/locale_keys.g.dart';
+import 'package:easy_localization/easy_localization.dart';
 
 class ProfilePage extends StatefulWidget {
   @override
@@ -59,7 +61,7 @@ class ProfilePageState extends State<ProfilePage> {
                     ),
                     SizedBox(height: 15.0),
                     Text(
-                      'Premium User',
+                      LocaleKeys.Premium_user.tr(),
                       style: TextStyle(
                         fontSize: 15.0,
                         color: Colors.black45,
@@ -78,7 +80,7 @@ class ProfilePageState extends State<ProfilePage> {
                             onTap: () {},
                             child: Center(
                               child: Text(
-                                'Edit Profile',
+                                LocaleKeys.Edit_profile.tr(),
                                 style: TextStyle(
                                     color: Colors.purple[700],
                                     fontWeight: FontWeight.bold),
@@ -104,7 +106,7 @@ class ProfilePageState extends State<ProfilePage> {
                             },
                             child: Center(
                               child: Text(
-                                'Log out',
+                                LocaleKeys.Logout.tr(),
                                 style: TextStyle(
                                     color: Colors.purple[700],
                                     fontWeight: FontWeight.bold),

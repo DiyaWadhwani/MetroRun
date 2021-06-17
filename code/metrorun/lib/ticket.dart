@@ -5,7 +5,8 @@ import 'header_design.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 import 'payment.dart';
-import 'generate.dart';
+import 'translations/locale_keys.g.dart';
+import 'package:easy_localization/easy_localization.dart';
 
 // ignore: must_be_immutable
 class Ticket extends StatefulWidget {
@@ -51,58 +52,58 @@ class TicketState extends State<Ticket> {
   // ignore: must_call_super
   void initState() {
     var greenDown = [
-      'Nadaprabhu Kempegowda Station Majestic',
-      'Chickpete',
-      'K.R.Market',
-      'National College',
-      'Lalbagh',
-      'South End Circle',
-      'Jayanagar',
-      'Rashtriya Vidyalaya Road',
-      'Banashankari',
-      'Jayaprakash Nagar',
-      'Yelachenahalli'
+      LocaleKeys.Yelachenahalli.tr(),
+      LocaleKeys.Jayaprakash_Nagar.tr(),
+      LocaleKeys.Banashankari.tr(),
+      LocaleKeys.Rashtriya_Vidyalaya_Road.tr(),
+      LocaleKeys.Jayanagar.tr(),
+      LocaleKeys.South_End_Circle.tr(),
+      LocaleKeys.Lalbag.tr(),
+      LocaleKeys.National_College.tr(),
+      LocaleKeys.KRMarket.tr(),
+      LocaleKeys.Chickpete.tr(),
+      LocaleKeys.Nadaprabhu_Kempegowda_Station_Majestic.tr(),
     ];
 
     var greenTop = [
-      'Nadaprabhu Kempegowda Station Majestic',
-      'Mantri Square Sampige Road',
-      'Srirampura',
-      'Kuvempu Road',
-      'Rajajinagar',
-      'Mahalakshmi layout',
-      'Sandal Soap Factory',
-      'Yeshwantpur',
-      'Gorguntepalya',
-      'Peenya',
-      'Peenya Industry',
-      'Jalahalli',
-      'Dasarahalli',
-      'Nagasandra'
+      LocaleKeys.Nadaprabhu_Kempegowda_Station_Majestic.tr(),
+      LocaleKeys.Mantri_Square_Sampige_Road.tr(),
+      LocaleKeys.Srirampura.tr(),
+      LocaleKeys.Kuvempu_Road.tr(),
+      LocaleKeys.Rajajinagar.tr(),
+      LocaleKeys.Mahalakshmi_layout.tr(),
+      LocaleKeys.Sandal_Soap_Factor.tr(),
+      LocaleKeys.Yeshwantpur.tr(),
+      LocaleKeys.Gorguntepalya.tr(),
+      LocaleKeys.Peenya.tr(),
+      LocaleKeys.Peenya_Industry.tr(),
+      LocaleKeys.Jalahalli.tr(),
+      LocaleKeys.Dasarahalli.tr(),
+      LocaleKeys.Nagasandra.tr()
     ];
 
     var purpleRight = [
-      'Nadaprabhu Kempegowda Majestic',
-      'Sir M Vishweshwarayya Central College',
-      'Vidhana Soudha',
-      'Cubbon Park',
-      'Mahatma Gandhi Road',
-      'Trinity',
-      'Halasuru',
-      'Indiranagar',
-      'Swami Vivekananda Road',
-      'Baiyyappanahalli'
+      LocaleKeys.Baiyyappanahalli.tr(),
+      LocaleKeys.Swami_Vivekananda_Road.tr(),
+      LocaleKeys.Indiranagar.tr(),
+      LocaleKeys.Halasuru.tr(),
+      LocaleKeys.Trinity.tr(),
+      LocaleKeys.Mahatma_Gandhi_Road.tr(),
+      LocaleKeys.Cubbon_Park.tr(),
+      LocaleKeys.Vidhana_Soudha.tr(),
+      LocaleKeys.Sir_M_Vishweshwarayya_Central_College.tr(),
+      LocaleKeys.Nadaprabhu_Kempegowda_Majestic.tr(),
     ];
 
     var purpleLeft = [
-      'Nadaprabhu Kempegowda Majestic',
-      'KSR City Railway Station',
-      'Magadi Road',
-      'Hosahalli',
-      'Vijayanagar',
-      'Attiguppe',
-      'Deepanjali Nagar',
-      'Mysuru Road'
+      LocaleKeys.Nadaprabhu_Kempegowda_Majestic.tr(),
+      LocaleKeys.KSR_City_Railway_Statio.tr(),
+      LocaleKeys.Magadi_Road.tr(),
+      LocaleKeys.Hosahalli.tr(),
+      LocaleKeys.Vijayanagar.tr(),
+      LocaleKeys.Attiguppe.tr(),
+      LocaleKeys.Deepanjali_Nagar.tr(),
+      LocaleKeys.Mysuru_Road.tr()
     ];
 
     int counter = 0, i = 0, from = 0, to = 0;
@@ -262,50 +263,51 @@ class TicketState extends State<Ticket> {
 
   //Metro Routes
   var purpleLine = [
-    'Baiyyappanahalli',
-    'Swami Vivekananda Road',
-    'Indiranagar',
-    'Halasuru',
-    'Trinity',
-    'Mahatma Gandhi Road',
-    'Cubbon Park',
-    'Vidhana Soudha',
-    'Sir M Vishweshwarayya Central College',
-    'Nadaprabhu Kempegowda Majestic',
-    'KSR City Railway Station',
-    'Magadi Road',
-    'Hosahalli',
-    'Vijayanagar',
-    'Attiguppe',
-    'Deepanjali Nagar',
-    'Mysuru Road'
+      LocaleKeys.Baiyyappanahalli.tr(),
+      LocaleKeys.Swami_Vivekananda_Road.tr(),
+      LocaleKeys.Indiranagar.tr(),
+      LocaleKeys.Halasuru.tr(),
+      LocaleKeys.Trinity.tr(),
+      LocaleKeys.Mahatma_Gandhi_Road.tr(),
+      LocaleKeys.Cubbon_Park.tr(),
+      LocaleKeys.Vidhana_Soudha.tr(),
+      LocaleKeys.Sir_M_Vishweshwarayya_Central_College.tr(),
+      LocaleKeys.Nadaprabhu_Kempegowda_Majestic.tr(),
+      LocaleKeys.KSR_City_Railway_Statio.tr(),
+      LocaleKeys.Magadi_Road.tr(),
+      LocaleKeys.Hosahalli.tr(),
+      LocaleKeys.Vijayanagar.tr(),
+      LocaleKeys.Attiguppe.tr(),
+      LocaleKeys.Deepanjali_Nagar.tr(),
+      LocaleKeys.Mysuru_Road.tr()
   ];
 
   var greenLine = [
-    'Yelachenahalli',
-    'Jayaprakash Nagar',
-    'Banashankari',
-    'Rashtriya Vidyalaya Road',
-    'Jayanagar',
-    'South End Circle',
-    'Lalbagh',
-    'National College',
-    'K.R.Market',
-    'Chickpete',
-    'Nadaprabhu Kempegowda Station Majestic',
-    'Mantri Square Sampige Road',
-    'Srirampura',
-    'Kuvempu Road',
-    'Rajajinagar',
-    'Mahalakshmi layout',
-    'Sandal Soap Factory',
-    'Yeshwantpur',
-    'Gorguntepalya',
-    'Peenya',
-    'Peenya Industry',
-    'Jalahalli',
-    'Dasarahalli',
-    'Nagasandra'
+
+  LocaleKeys.Yelachenahalli.tr(),
+  LocaleKeys.Jayaprakash_Nagar.tr(),
+  LocaleKeys.Banashankari.tr(),
+  LocaleKeys.Rashtriya_Vidyalaya_Road.tr(),
+  LocaleKeys.Jayanagar.tr(),
+  LocaleKeys.South_End_Circle.tr(),
+  LocaleKeys.Lalbag.tr(),
+  LocaleKeys.National_College.tr(),
+  LocaleKeys.KRMarket.tr(),
+  LocaleKeys.Chickpete.tr(),
+  LocaleKeys.Nadaprabhu_Kempegowda_Station_Majestic.tr(),
+  LocaleKeys.Mantri_Square_Sampige_Road.tr(),
+  LocaleKeys.Srirampura.tr(),
+  LocaleKeys.Kuvempu_Road.tr(),
+  LocaleKeys.Rajajinagar.tr(),
+  LocaleKeys.Mahalakshmi_layout.tr(),
+  LocaleKeys.Sandal_Soap_Factor.tr(),
+  LocaleKeys.Yeshwantpur.tr(),
+  LocaleKeys.Gorguntepalya.tr(),
+  LocaleKeys.Peenya.tr(),
+  LocaleKeys.Peenya_Industry.tr(),
+  LocaleKeys.Jalahalli.tr(),
+  LocaleKeys.Dasarahalli.tr(),
+  LocaleKeys.Nagasandra.tr()
   ];
 
   //Aesthetics of the ticket screen
@@ -335,7 +337,7 @@ class TicketState extends State<Ticket> {
         backgroundColor: Colors.green[200],
         elevation: 0,
         title: Text(
-          'Here\'s your ticket!',
+          LocaleKeys.Hereticket.tr(),
           textAlign: TextAlign.center,
           style: TextStyle(
             fontSize: 25.0,
@@ -380,7 +382,7 @@ class TicketState extends State<Ticket> {
                                   crossAxisAlignment: CrossAxisAlignment.start,
                                   children: <Widget>[
                                     Text(
-                                      'Date',
+                                      LocaleKeys.Date.tr(),
                                       style: TextStyle(
                                           color: Colors.purple[700],
                                           fontWeight: FontWeight.bold,
@@ -408,7 +410,7 @@ class TicketState extends State<Ticket> {
                                   crossAxisAlignment: CrossAxisAlignment.start,
                                   children: <Widget>[
                                     Text(
-                                      'Time',
+                                      LocaleKeys.Time.tr(),
                                       style: TextStyle(
                                           color: Colors.green[800],
                                           fontWeight: FontWeight.bold,
@@ -438,7 +440,7 @@ class TicketState extends State<Ticket> {
                                 crossAxisAlignment: CrossAxisAlignment.start,
                                 children: <Widget>[
                                   Text(
-                                    'From',
+                                    LocaleKeys.From.tr(),
                                     style: TextStyle(
                                         color: Colors.black,
                                         fontWeight: FontWeight.bold,
@@ -450,7 +452,7 @@ class TicketState extends State<Ticket> {
                                   ),
                                   SizedBox(height: 10.0),
                                   Text(
-                                    'To',
+                                    LocaleKeys.To.tr(),
                                     style: TextStyle(
                                         color: Colors.black,
                                         fontWeight: FontWeight.bold,
@@ -519,7 +521,8 @@ class TicketState extends State<Ticket> {
                                           BorderRadius.circular(10.0))),
                               // color: Colors.purple[700],
                               // splashColor: Colors.purpleAccent,
-                              child: Text('PAY',
+                              child: Text(
+                                LocaleKeys.Pay.tr(),
                                   style: TextStyle(
                                     fontSize: 22.0,
                                     color: Colors.green[200],
@@ -529,8 +532,6 @@ class TicketState extends State<Ticket> {
                                 sendAmount(amount);
                                 print("Amount Paid : $amount\n");
                                 myAmount = amount;
-                                senddetails(from_station, to_station,
-                                    currentdate, currenttime, amount);
                                 Navigator.of(context).pushNamed('/paymentPage');
                                 // Navigator.of(context).pushNamed('/qrcodepage');
                                 /*Navigator.push(

@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:easy_localization/easy_localization.dart';
+import 'translations/locale_keys.g.dart';
 
 final double kDefaultPadding = 5.0;
 final kPrimaryColor = Color(0xFFA5D6A7);
@@ -39,7 +41,7 @@ class HeaderDesign extends StatelessWidget {
               children: <Widget>[
                 SizedBox(width: 20.0),
                 Text(
-                  'Select your route.',
+                  LocaleKeys.Select_your_route.tr(),
                   style: Theme.of(context).textTheme.headline5!.copyWith(
                       color: Colors.black,
                       fontWeight: FontWeight.bold,

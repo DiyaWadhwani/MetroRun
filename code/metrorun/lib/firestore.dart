@@ -38,15 +38,6 @@ Future<void> userSetup() async {
   print("------exiting userSetup()------");
 }
 
-updateRideDataLocally(var from, var to, var date, var time, double amount) {
-  myDestination = to;
-  mySource = from;
-  myAmount = amount;
-  print('Updating ride data locally');
-  print(to);
-  updateRideData();
-}
-
 Future<void> updateRideData() async {
   print("------entering updateRideData()------");
   users.doc(myUid).get().then((DocumentSnapshot documentSnapshot) {
