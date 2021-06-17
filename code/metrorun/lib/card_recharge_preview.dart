@@ -27,24 +27,24 @@ class _CardRechargePreviewState extends State<CardRechargePreview> {
                   SizedBox(
                     height: 20.0,
                   ),
-
-                  new RaisedButton(
-                    onPressed: _launchURL,
-                    child: new Text(
-                      LocaleKeys.Recharge_metro_card.tr()),
+                  ConstrainedBox(
+                    constraints:
+                        BoxConstraints.tightFor(width: 150, height: 150),
+                    child: ElevatedButton(
+                      child: Text(
+                        LocaleKeys.Recharge_metro_card.tr(),
+                        style:
+                            TextStyle(fontSize: 18, color: Colors.green[900]),
+                        textAlign: TextAlign.center,
+                      ),
+                      onPressed: _launchURL,
+                      style: ElevatedButton.styleFrom(
+                          shape: CircleBorder(),
+                          side: BorderSide(
+                              color: Colors.green.shade200, width: 3.0),
+                          primary: Colors.white),
+                    ),
                   ),
-                  // Link(
-                  //     uri: Uri.parse(
-                  //         "https://paytm.com/metro-card-recharge/bengaluru-metro"),
-                  //     target: LinkTarget.self,
-                  //     builder: (context, followLink) {
-                  //       return TextButton(
-                  //           onPressed: followLink,
-                  //           child: Text(
-                  //             "Recharge Metro Card",
-                  //             style: TextStyle(color: Colors.green.shade800),
-                  //           ));
-                  //     }),
                   SizedBox(
                     height: 20.0,
                   ),
@@ -57,136 +57,8 @@ class _CardRechargePreviewState extends State<CardRechargePreview> {
     );
   }
 
-  _launchURL() async {
+  _launchURL() {
     const url = 'https://paytm.com/metro-card-recharge/bengaluru-metro';
-    if (await canLaunch(url)) {
-      await launch(url);
-    } else {
-      throw 'Could not launch $url';
-    }
+    launch(url);
   }
 }
-
-//         body: Stack(
-//       children:
-
-//        <Widget>[
-
-//         Container(
-
-//             child: Align(
-//           alignment: Alignment.topCenter,
-//           child: Image.asset("assets/MetroRunLogo.png"),
-//         )),
-//         AnimatedPositioned(
-//             duration: Duration(milliseconds: 300),
-//             left: opened
-//                 ? MediaQuery.of(context).size.width / 2 + 90.0
-//                 : (MediaQuery.of(context).size.width / 2) - 90.0,
-//             top: opened
-//                 ? (MediaQuery.of(context).size.height / 2) - 40.0
-//                 : (MediaQuery.of(context).size.height / 2) - 110.0,
-//             child: _buildOption(
-//                 Icon(Icons.account_balance, color: Colors.white),
-//                 Colors.green.shade700)),
-//         AnimatedPositioned(
-//             duration: Duration(milliseconds: 300),
-//             left: opened
-//                 ? MediaQuery.of(context).size.width / 2 + 90.0
-//                 : (MediaQuery.of(context).size.width / 2) - 130.0,
-//             top: (MediaQuery.of(context).size.height / 2) - 30.0,
-//             child: _buildOption(
-//                 Icon(Icons.monetization_on_sharp, color: Colors.white),
-//                 Colors.green.shade700)),
-//         AnimatedPositioned(
-//           duration: Duration(milliseconds: 300),
-//           left: opened
-//               ? MediaQuery.of(context).size.width / 2 + 90.0
-//               : MediaQuery.of(context).size.width / 2 - 50.0,
-//           top: opened
-//               ? (MediaQuery.of(context).size.height / 2)
-//               : (MediaQuery.of(context).size.height / 2) - 30.0,
-//           child: _buildOption(
-//               Icon(Icons.add, color: Colors.white), Colors.green.shade700),
-//         ),
-//         Align(
-//           alignment: Alignment.center,
-//           child: AnimatedSwitcher(
-//             duration: Duration(milliseconds: 200),
-//             transitionBuilder: (Widget child, Animation<double> animation) {
-//               return ScaleTransition(child: child, scale: animation);
-//             },
-//             child: opened
-//                 ? InkWell(
-//                     key: UniqueKey(),
-//                     child: Padding(
-//                         padding: EdgeInsets.all(8.0),
-//                         child: Container(
-//                             height: 50.0,
-//                             width: 120.0,
-//                             decoration: BoxDecoration(
-//                                 borderRadius: BorderRadius.circular(40.0),
-//                                 color: kPrimaryColor),
-//                             child: Center(
-//                                 child: TextButton(
-//                               onPressed: () {},
-//                               child: Text(
-//                                 'Book tickets',
-//                                 style: TextStyle(color: Colors.green[800]),
-//                               ),
-//                             )))),
-//                     onTap: () {
-//                       setState(() {
-//                         opened = false;
-//                       });
-//                     })
-//                 : InkWell(
-//                     key: UniqueKey(),
-//                     child: Padding(
-//                         padding: EdgeInsets.all(8.0),
-//                         child: Container(
-//                             height: 80.0,
-//                             width: 80.0,
-//                             decoration: BoxDecoration(
-//                                 borderRadius: BorderRadius.circular(40.0),
-//                                 color: Colors.green[200]),
-//                             child: Center(
-//                                 child:
-
-//                                     Icon(Icons.close, color: Colors.white)))),
-//                     onTap: () {
-//                       setState(() {
-//                         opened = true;
-//                       });
-//                     }),
-//           ),
-//         )
-//       ],
-//     ));
-//   }
-
-//   Widget _buildOption(Icon icon, Color iconColor) {
-//     return AnimatedSwitcher(
-//         duration: Duration(milliseconds: 500),
-//         transitionBuilder: (Widget child, Animation<double> animation) {
-//           return RotationTransition(child: child, turns: animation);
-//         },
-//         child: InkWell(
-//           key: UniqueKey(),
-//           child: Padding(
-//               padding: EdgeInsets.all(8.0),
-//               child: Container(
-//                   height: 50.0,
-//                   width: 50.0,
-//                   decoration: BoxDecoration(
-//                       borderRadius: BorderRadius.circular(25.0),
-//                       color: iconColor),
-//                   child: Center(child: icon))),
-//           onTap: () {
-//             setState(() {
-//               opened = false;
-//             });
-//           },
-//         ));
-//   }
-// }
