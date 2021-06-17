@@ -3,6 +3,7 @@
 abstract class LocaleKeys {
   static const Welcome = 'Welcome!';
   static const Logout = 'Logout';
+  static const LogoutPreview = 'Are you sure you want to logout?';
   static const Language = 'Language';
   static const What_would_you_like_to_do = 'What_would_you_like_to_do';
   static const Profile = 'Profile';

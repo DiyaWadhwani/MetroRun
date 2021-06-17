@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:easy_localization/easy_localization.dart';
+import 'package:metrorun/logout_preview.dart';
 import 'lang/language.dart';
 import 'profile_preview.dart';
 import 'ticketPreview.dart';
@@ -37,7 +38,8 @@ class _HomePageState extends State<HomePage> {
     TicketPreview(),
     MapPage(),
     CardRechargePreview(),
-    ProfilePreview()
+    ProfilePreview(),
+    LogoutPreview(),
   ];
 
   List isSelected = [true, false, false, false, false, false];
@@ -187,17 +189,17 @@ class _HomePageState extends State<HomePage> {
             children: [
               RotatedBox(
                   quarterTurns: 1,
-                  child: buildOption(LocaleKeys.Profile.tr(), 3)),
+                  child: buildOption(LocaleKeys.Logout.tr(), 4)),
               RotatedBox(
                   quarterTurns: 1, child: buildOption(LocaleKeys.Map.tr(), 1)),
               RotatedBox(
                   quarterTurns: 1, child: buildOption(LocaleKeys.Card.tr(), 2)),
               RotatedBox(
                   quarterTurns: 1,
-                  child: buildOption(LocaleKeys.Ticekts.tr(), 0)),
+                  child: buildOption(LocaleKeys.Profile.tr(), 3)),
               RotatedBox(
                   quarterTurns: 1,
-                  child: buildOption(LocaleKeys.Logout.tr(), 4)),
+                  child: buildOption(LocaleKeys.Ticekts.tr(), 0)),
             ],
           ),
         ),
