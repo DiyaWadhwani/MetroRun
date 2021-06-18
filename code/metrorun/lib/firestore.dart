@@ -52,6 +52,24 @@ Future<void> updateRideData() async {
       .set(data)
       .whenComplete(() => print("Rides updated on the database!"))
       .catchError((e) => print(e));
+
+  fetchRides();
+}
+
+Map<String, dynamic> fetchRides() {
+  Map<String, dynamic> rideFields = {};
+  rides.get().then((querySnapshot) {
+    querySnapshot.docs.forEach((result) {
+      rides.get().then((querySnapshot) {
+        querySnapshot.docs.forEach((result) {
+          // print(result.data());
+          rideFields = result.data() as Map<String, dynamic>;
+          ;
+        });
+      });
+    });
+  });
+  return rideFields;
 }
 
 // Future<void> updateRideData() async {

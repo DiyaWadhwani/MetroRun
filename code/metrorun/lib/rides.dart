@@ -128,7 +128,7 @@ class RidesPageState extends State<RidesPage> {
               _buildCard('Baiyappanahalli', 'Majestic', 3),
               _buildCard('MG Road', 'Baiyappanahalli', 4),
               _buildCard('Baiyappanahalli', 'MG Road', 5),
-              _buildCard('Rajainagar', 'Baiyappanahalli', 6),
+              _buildCard('Rajajnagar', 'Baiyappanahalli', 6),
             ],
           )
         ],

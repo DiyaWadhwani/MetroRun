@@ -114,8 +114,7 @@ class _PaymentState extends State<Payment> {
                 style: TextStyle(color: Colors.white),
               ),
               onPressed: () {
-                Navigator.of(context).pushNamed('/qrcodepage');
-                //openCheckout();
+                openCheckout();
               },
             )
           ],
