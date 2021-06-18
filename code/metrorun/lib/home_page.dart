@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:easy_localization/easy_localization.dart';
+import 'package:metrorun/home_preview.dart';
 import 'package:metrorun/logout_preview.dart';
 import 'lang/language.dart';
 import 'profile_preview.dart';
@@ -40,9 +41,10 @@ class _HomePageState extends State<HomePage> {
     CardRechargePreview(),
     ProfilePreview(),
     LogoutPreview(),
+    HomePreview()
   ];
 
-  List isSelected = [true, false, false, false, false, false];
+  List isSelected = [true, false, false, false, false, false, false];
 
   @override
   Widget build(BuildContext context) {
@@ -200,6 +202,9 @@ class _HomePageState extends State<HomePage> {
               RotatedBox(
                   quarterTurns: 1,
                   child: buildOption(LocaleKeys.Ticekts.tr(), 0)),
+              RotatedBox(
+                  quarterTurns: 1,
+                  child: buildOption(LocaleKeys.HomePreviewOption.tr(), 5)),
             ],
           ),
         ),

@@ -1,6 +1,8 @@
 {
     "Welcome":"Welcome",
     "Logout":"Logout",
+    "Home":"Home",
+    "LogoutPreview":"Are you sure you want to logout?",
     "Language":"Please choose a Language",
     "What_would_you_like_to_do":"What would you like to do?",
     "Profile":"Profile",
@@ -47,7 +49,7 @@
     "Rashtriya_Vidyalaya_Road":"Rashtriya Vidyalaya Road",
     "Jayanagar":"Jayanagar",
     "South_End_Circle":"South End Circle",
-    "Lalbag":"Lalbag",
+    "Lalbagh":"Lalbagh",
     "National_College":"National College",
     "KRMarket":"K.R.Market",
     "Chickpete":"Chickpete",

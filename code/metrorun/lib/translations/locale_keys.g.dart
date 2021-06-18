@@ -1,9 +1,10 @@
 // DO NOT EDIT. This is code generated via package:easy_localization/generate.dart
 
-abstract class LocaleKeys {
-  static const Welcome = 'Welcome!';
+abstract class  LocaleKeys {
+  static const Welcome = 'Welcome';
   static const Logout = 'Logout';
-  static const LogoutPreview = 'Are you sure you want to logout?';
+  static const Home = 'Home';
+  static const LogoutPreview = 'LogoutPreview';
   static const Language = 'Language';
   static const What_would_you_like_to_do = 'What_would_you_like_to_do';
   static const Profile = 'Profile';
@@ -49,12 +50,11 @@ abstract class LocaleKeys {
   static const Rashtriya_Vidyalaya_Road = 'Rashtriya_Vidyalaya_Road';
   static const Jayanagar = 'Jayanagar';
   static const South_End_Circle = 'South_End_Circle';
-  static const Lalbag = 'Lalbag';
+  static const Lalbagh = 'Lalbagh';
   static const National_College = 'National_College';
   static const KRMarket = 'KRMarket';
   static const Chickpete = 'Chickpete';
-  static const Nadaprabhu_Kempegowda_Station_Majestic =
-      'Nadaprabhu_Kempegowda_Station_Majestic';
+  static const Nadaprabhu_Kempegowda_Station_Majestic = 'Nadaprabhu_Kempegowda_Station_Majestic';
   static const Mantri_Square_Sampige_Road = 'Mantri_Square_Sampige_Road';
   static const Srirampura = 'Srirampura';
   static const Kuvempu_Road = 'Kuvempu_Road';
@@ -76,10 +76,8 @@ abstract class LocaleKeys {
   static const Mahatma_Gandhi_Road = 'Mahatma_Gandhi_Road';
   static const Cubbon_Park = 'Cubbon_Park';
   static const Vidhana_Soudha = 'Vidhana_Soudha';
-  static const Sir_M_Vishweshwarayya_Central_College =
-      'Sir_M_Vishweshwarayya_Central_College';
-  static const Nadaprabhu_Kempegowda_Majestic =
-      'Nadaprabhu_Kempegowda_Majestic';
+  static const Sir_M_Vishweshwarayya_Central_College = 'Sir_M_Vishweshwarayya_Central_College';
+  static const Nadaprabhu_Kempegowda_Majestic = 'Nadaprabhu_Kempegowda_Majestic';
   static const KSR_City_Railway_Statio = 'KSR_City_Railway_Statio';
   static const Magadi_Road = 'Magadi_Road';
   static const Hosahalli = 'Hosahalli';
@@ -87,4 +85,5 @@ abstract class LocaleKeys {
   static const Attiguppe = 'Attiguppe';
   static const Deepanjali_Nagar = 'Deepanjali_Nagar';
   static const Mysuru_Road = 'Mysuru_Road';
+
 }

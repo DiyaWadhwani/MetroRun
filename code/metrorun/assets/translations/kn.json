@@ -1,6 +1,8 @@
 {
    "Welcome":"ಸ್ವಾಗತ",
     "Logout":"ಲಾಗ್ ಔಟ್",
+    "Home":"ಮನೆ",
+    "LogoutPreview":"ನೀವು ಲಾಗ್  ಔಟ್ ಮಾಡಲು ಖಚಿತವಾಗಿ ಬಯಸುವಿರಾ?",
     "Language":"ದಯವಿಟ್ಟು ಭಾಷೆಯನ್ನು ಆರಿಸಿ",
     "What_would_you_like_to_do":"ನೀವು ಏನು ಮಾಡಲು ಬಯಸುವಿರಿ?",
     "Profile":"ಪ್ರೊಫೈಲ್",
@@ -47,7 +49,7 @@
     "Rashtriya_Vidyalaya_Road":"ರಾಷ್ಟ್ರೀಯ ವಿದ್ಯಾಲಯ ರಸ್ತೆ",
     "Jayanagar":"ಜಯನಗರ",
     "South_End_Circle":"ಸೌತ್ ಎಂಡ್ ಸರ್ಕಲ್",
-    "Lalbag":"ಲಾಲ್‌ಬಾಗ್",
+    "Lalbagh":"ಲಾಲ್‌ಬಾಗ್",
     "National_College":"ರಾಷ್ಟ್ರೀಯ ಕಾಲೇಜು",
     "KRMarket":"ಕೆ.ಆರ್.ಮಾರ್ಕೆಟ್",
     "Chickpete":" ಚಿಕ್‌ಪೇಟೆ",
