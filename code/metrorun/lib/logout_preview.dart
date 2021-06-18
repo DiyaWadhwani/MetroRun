@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'auth.dart';
 import 'translations/locale_keys.g.dart';
 import 'package:easy_localization/easy_localization.dart';
 import 'lang/language.dart';
@@ -21,7 +22,10 @@ class _LogoutPreviewState extends State<LogoutPreview> {
               style: TextStyle(fontSize: 18, color: Colors.green[900]),
               textAlign: TextAlign.center,
             ),
-            onPressed: () {
+            onPressed: () async {
+              await signOutWithGoogle();
+              print('User signed out');
+              print("Heading to login_page");
               Navigator.of(context).pushNamed('/loginpage');
             },
             style: ElevatedButton.styleFrom(
