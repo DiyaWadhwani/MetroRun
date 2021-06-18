@@ -36,12 +36,12 @@ class _HomePageState extends State<HomePage> {
   var selectedOption = 0;
 
   List allOptions = [
-    TicketPreview(),
+    HomePreview(),
     MapPage(),
     CardRechargePreview(),
     ProfilePreview(),
     LogoutPreview(),
-    HomePreview()
+    TicketPreview(),
   ];
 
   List isSelected = [true, false, false, false, false, false, false];
@@ -201,10 +201,9 @@ class _HomePageState extends State<HomePage> {
                   child: buildOption(LocaleKeys.Profile.tr(), 3)),
               RotatedBox(
                   quarterTurns: 1,
-                  child: buildOption(LocaleKeys.Ticekts.tr(), 0)),
+                  child: buildOption(LocaleKeys.Ticekts.tr(), 5)),
               RotatedBox(
-                  quarterTurns: 1,
-                  child: buildOption(LocaleKeys.HomePreviewOption.tr(), 5)),
+                  quarterTurns: 1, child: buildOption(LocaleKeys.Home.tr(), 0)),
             ],
           ),
         ),
