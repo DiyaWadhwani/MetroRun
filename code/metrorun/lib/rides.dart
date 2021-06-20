@@ -123,7 +123,7 @@ class RidesPageState extends State<RidesPage> {
             mainAxisSpacing: 4.0,
             shrinkWrap: true,
             children: <Widget>[
-              _buildCard('Baiyappanahalli', 'Rajajinagar', 1),
+              _buildCard('K.R.Market', 'Magadi Road', 1),
               _buildCard('Majestic', 'Baiyappanahalli', 2),
               _buildCard('Baiyappanahalli', 'Majestic', 3),
               _buildCard('MG Road', 'Baiyappanahalli', 4),

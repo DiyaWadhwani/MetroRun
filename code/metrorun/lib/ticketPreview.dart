@@ -38,7 +38,7 @@ class _TicketPreviewState extends State<TicketPreview> {
               constraints: BoxConstraints.tightFor(width: 100, height: 100),
               child: ElevatedButton(
                 child: Text(
-                  LocaleKeys.View_Active_Ticket.tr(),
+                  LocaleKeys.View_Rides.tr(),
                   style: TextStyle(fontSize: 18, color: Colors.green[900]),
                   textAlign: TextAlign.center,
                 ),

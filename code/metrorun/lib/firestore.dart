@@ -64,6 +64,7 @@ Map<String, dynamic> fetchRides() {
         querySnapshot.docs.forEach((result) {
           // print(result.data());
           rideFields = result.data() as Map<String, dynamic>;
+          print("Ride data-------" + rideFields.toString());
           ;
         });
       });
