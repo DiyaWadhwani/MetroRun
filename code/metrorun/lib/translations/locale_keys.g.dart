@@ -1,6 +1,6 @@
 // DO NOT EDIT. This is code generated via package:easy_localization/generate.dart
 
-abstract class  LocaleKeys {
+abstract class LocaleKeys {
   static const Welcome = 'Welcome';
   static const Logout = 'Logout';
   static const Home = 'Home';
@@ -54,7 +54,8 @@ abstract class  LocaleKeys {
   static const National_College = 'National_College';
   static const KRMarket = 'KRMarket';
   static const Chickpete = 'Chickpete';
-  static const Nadaprabhu_Kempegowda_Station_Majestic = 'Nadaprabhu_Kempegowda_Station_Majestic';
+  static const Nadaprabhu_Kempegowda_Station_Majestic =
+      'Nadaprabhu_Kempegowda_Station_Majestic';
   static const Mantri_Square_Sampige_Road = 'Mantri_Square_Sampige_Road';
   static const Srirampura = 'Srirampura';
   static const Kuvempu_Road = 'Kuvempu_Road';
@@ -76,8 +77,10 @@ abstract class  LocaleKeys {
   static const Mahatma_Gandhi_Road = 'Mahatma_Gandhi_Road';
   static const Cubbon_Park = 'Cubbon_Park';
   static const Vidhana_Soudha = 'Vidhana_Soudha';
-  static const Sir_M_Vishweshwarayya_Central_College = 'Sir_M_Vishweshwarayya_Central_College';
-  static const Nadaprabhu_Kempegowda_Majestic = 'Nadaprabhu_Kempegowda_Majestic';
+  static const Sir_M_Vishweshwarayya_Central_College =
+      'Sir_M_Vishweshwarayya_Central_College';
+  static const Nadaprabhu_Kempegowda_Majestic =
+      'Nadaprabhu_Kempegowda_Majestic';
   static const KSR_City_Railway_Statio = 'KSR_City_Railway_Statio';
   static const Magadi_Road = 'Magadi_Road';
   static const Hosahalli = 'Hosahalli';
@@ -85,5 +88,4 @@ abstract class  LocaleKeys {
   static const Attiguppe = 'Attiguppe';
   static const Deepanjali_Nagar = 'Deepanjali_Nagar';
   static const Mysuru_Road = 'Mysuru_Road';
-
 }
