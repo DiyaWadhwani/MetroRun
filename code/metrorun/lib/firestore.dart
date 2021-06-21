@@ -35,6 +35,8 @@ Future<void> userSetup() async {
   print("------exiting userSetup()------");
 }
 
+Map<String, dynamic> rideFields = {};
+
 Future<void> updateRideData() async {
   DocumentReference documentReferencer = rides.doc(myQrString);
 
@@ -56,15 +58,19 @@ Future<void> updateRideData() async {
   fetchRides();
 }
 
+int numTickets = 0;
+
 Map<String, dynamic> fetchRides() {
-  Map<String, dynamic> rideFields = {};
   rides.get().then((querySnapshot) {
+    print(querySnapshot);
     querySnapshot.docs.forEach((result) {
       rides.get().then((querySnapshot) {
+        print(querySnapshot.size);
+        numTickets = querySnapshot.size;
         querySnapshot.docs.forEach((result) {
-          // print(result.data());
+          print(result.data());
           rideFields = result.data() as Map<String, dynamic>;
-          print("Ride data-------" + rideFields.toString());
+          //print("Ride data-------" + rideFields.toString());
           ;
         });
       });

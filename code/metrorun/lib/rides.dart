@@ -123,12 +123,12 @@ class RidesPageState extends State<RidesPage> {
             mainAxisSpacing: 4.0,
             shrinkWrap: true,
             children: <Widget>[
-              _buildCard('K.R.Market', 'Magadi Road', 1),
+              _buildCard('Baiyappanahalli', 'Rajajinagar', 1),
               _buildCard('Majestic', 'Baiyappanahalli', 2),
               _buildCard('Baiyappanahalli', 'Majestic', 3),
               _buildCard('MG Road', 'Baiyappanahalli', 4),
               _buildCard('Baiyappanahalli', 'MG Road', 5),
-              _buildCard('Rajajnagar', 'Baiyappanahalli', 6),
+              _buildCard('Rajainagar', 'Baiyappanahalli', 6),
             ],
           )
         ],
@@ -208,3 +208,248 @@ class RidesPageState extends State<RidesPage> {
             : EdgeInsets.fromLTRB(25.0, 0.0, 5.0, 10.0));
   }
 }
+
+// import 'package:flutter/material.dart';
+// import 'package:metrorun/firestore.dart';
+
+// class RidesPage extends StatefulWidget {
+//   @override
+//   RidesPageState createState() => new RidesPageState();
+// }
+
+// class RidesPageState extends State<RidesPage> {
+//   @override
+//   void initState() {
+//     super.initState();
+//     fetchRides();
+//     print(rideFields);
+//     traverseRideData();
+//   }
+
+//   void traverseRideData() {}
+
+//   @override
+//   Widget build(BuildContext context) {
+//     return new Scaffold(
+//       appBar: new AppBar(
+//         elevation: 0.0,
+//         centerTitle: true,
+//         backgroundColor: Colors.white,
+//         leading: IconButton(
+//             onPressed: () {
+//               Navigator.of(context).pushNamed('/homepage');
+//             },
+//             icon: Icon(Icons.arrow_back),
+//             color: Colors.green[800]),
+//       ),
+//       body: ListView(
+//         shrinkWrap: true,
+//         children: <Widget>[
+//           Stack(
+//             children: <Widget>[
+//               Container(
+//                 alignment: Alignment(0.0, -0.40),
+//                 height: 100.0,
+//                 color: Colors.white,
+//                 child: Text(
+//                   'Rides',
+//                   style: TextStyle(fontSize: 20.0),
+//                 ),
+//               ),
+//               Container(
+//                 margin: EdgeInsets.fromLTRB(25.0, 90.0, 25.0, 0.0),
+//                 decoration: BoxDecoration(
+//                     color: Colors.white,
+//                     borderRadius: BorderRadius.circular(20.0),
+//                     boxShadow: [
+//                       BoxShadow(blurRadius: 2.0, color: Colors.grey)
+//                     ]),
+//                 child: Row(
+//                   crossAxisAlignment: CrossAxisAlignment.center,
+//                   children: <Widget>[
+//                     Stack(
+//                       children: <Widget>[
+//                         Container(
+//                           padding: EdgeInsets.fromLTRB(25.0, 25.0, 5.0, 5.0),
+//                           child: Text(
+//                             'Number of rides',
+//                             style: TextStyle(
+//                                 color: Colors.grey,
+//                                 fontWeight: FontWeight.bold,
+//                                 fontSize: 14.0),
+//                           ),
+//                         ),
+//                         Container(
+//                           padding: EdgeInsets.fromLTRB(25.0, 40.0, 5.0, 25.0),
+//                           child: Text(
+//                             numTickets.toString(),
+//                             style: TextStyle(
+//                                 color: Colors.black,
+//                                 fontWeight: FontWeight.bold,
+//                                 fontSize: 40.0),
+//                           ),
+//                         )
+//                       ],
+//                     ),
+//                     SizedBox(width: 60.0),
+//                     Container(
+//                       height: 60.0,
+//                       width: 125.0,
+//                       decoration: BoxDecoration(
+//                           color: Colors.greenAccent[100]!.withOpacity(0.5),
+//                           borderRadius: BorderRadius.circular(10.0)),
+//                       child: ElevatedButton(
+//                           child: Text('Book a ticket again?',
+//                               style: TextStyle(
+//                                   fontWeight: FontWeight.bold,
+//                                   color: Colors.green)),
+//                           style: ElevatedButton.styleFrom(
+//                               primary:
+//                                   Colors.greenAccent[100]!.withOpacity(0.5)),
+//                           onPressed: () {
+//                             Navigator.of(context).pushNamed('/bookingpage');
+//                           }),
+//                     )
+//                   ],
+//                 ),
+//               )
+//             ],
+//           ),
+//           SizedBox(height: 40.0),
+//           Container(
+//               padding: EdgeInsets.only(left: 25.0, right: 25.0),
+//               child: Row(
+//                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
+//                 children: <Widget>[
+//                   Text(
+//                     'MY RIDES',
+//                     style: TextStyle(
+//                         color: Colors.grey,
+//                         fontWeight: FontWeight.bold,
+//                         fontSize: 12.0),
+//                   ),
+//                   Text(
+//                     'ACTIVE',
+//                     style: TextStyle(
+//                         color: Colors.green,
+//                         fontWeight: FontWeight.bold,
+//                         fontSize: 12.0),
+//                   )
+//                 ],
+//               )),
+//           SizedBox(height: 10.0),
+//           // ListView.builder(
+//           //   shrinkWrap: true,
+//           //   itemCount: rideFields.length,
+//           //   itemBuilder: (context, index) {
+//           //     return SizedBox(
+//           //       height: 150,
+//           //       child: Column(
+//           //         children: [
+//           //           _buildCard(rideFields['To'], rideFields['From']),
+//           //         ],
+//           //       ),
+//           //     );
+//           //   },
+//           // ),
+
+//           GridView.count(
+//             crossAxisCount: numTickets,
+//             primary: false,
+//             crossAxisSpacing: 2.0,
+//             mainAxisSpacing: 4.0,
+//             shrinkWrap: true,
+
+//             children: List.generate(numTickets, (index) {
+//               return Container(
+//                   child: _buildCard(rideFields['To'], rideFields['From']));
+//             }),
+
+//             // _buildCard('Baiyappanahalli', 'Rajajinagar', 1),
+//             // _buildCard('Majestic', 'Baiyappanahalli', 2),
+//             // _buildCard('Baiyappanahalli', 'Majestic', 3),
+//             // _buildCard('MG Road', 'Baiyappanahalli', 4),
+//             // _buildCard('Baiyappanahalli', 'MG Road', 5),
+//             // _buildCard('Rajajnagar', 'Baiyappanahalli', 6),
+//             // for (int i = 0; i < numTickets; i++)
+//           )
+//         ],
+//       ),
+//     );
+//   }
+
+//   Widget _buildCard(
+//     String toStation,
+//     String fromStation,
+//   ) {
+//     return Card(
+//         shape:
+//             RoundedRectangleBorder(borderRadius: BorderRadius.circular(10.0)),
+//         elevation: 7.0,
+//         child: Column(
+//           children: <Widget>[
+//             SizedBox(height: 20.0),
+//             Stack(children: <Widget>[
+//               Container(
+//                 height: 60.0,
+//                 width: 60.0,
+//                 decoration: BoxDecoration(
+//                     borderRadius: BorderRadius.circular(30.0),
+//                     color: Colors.yellow
+//                     // image: DecorationImage(image: NetworkImage(''))
+//                     ),
+//               ),
+//               // Container(
+//               //   margin: EdgeInsets.only(left: 40.0),
+//               //   height: 20.0,
+//               //   width: 20.0,
+//               //   decoration: BoxDecoration(
+//               //       borderRadius: BorderRadius.circular(30.0),
+//               //       // color: status != 'Rajajinagar'
+//               //       //     ? Colors.grey
+//               //       //     : Colors.green[800],
+//               //       border: Border.all(
+//               //           color: Colors.white,
+//               //           style: BorderStyle.solid,
+//               //           width: 2.0)),
+//               // )
+//             ]),
+//             SizedBox(height: 15.0),
+//             Text(
+//               toStation,
+//               style: TextStyle(
+//                 fontWeight: FontWeight.bold,
+//                 fontSize: 15.0,
+//               ),
+//             ),
+//             SizedBox(height: 10.0),
+//             Text(
+//               fromStation,
+//               style: TextStyle(
+//                   fontWeight: FontWeight.bold,
+//                   fontSize: 13.0,
+//                   color: Colors.grey),
+//             ),
+//             SizedBox(height: 15.0),
+//             // Container(
+//             //     width: 175.0,
+//             //     decoration: BoxDecoration(
+//             //       // color:
+//             //       // status != 'Rajajinagar' ? Colors.grey : Colors.green,
+//             //       borderRadius: BorderRadius.only(
+//             //           bottomLeft: Radius.circular(10.0),
+//             //           bottomRight: Radius.circular(10.0)),
+//             //     ),
+//             //     child: Center(
+//             //       child: Text(
+//             //         'View ticket',
+//             //         style: TextStyle(color: Colors.white),
+//             //       ),
+//             //     ))
+//           ],
+//         ));
+//     // margin: cardIndex.isEven
+//     // ? EdgeInsets.fromLTRB(10.0, 0.0, 25.0, 10.0)
+//     // : EdgeInsets.fromLTRB(25.0, 0.0, 5.0, 10.0));
+//   }
+// }

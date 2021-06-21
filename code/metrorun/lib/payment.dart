@@ -49,7 +49,7 @@ class _PaymentState extends State<Payment> {
 
   void openCheckout() {
     var options = {
-      "key": "rzp_test_V7WQ6qHKF4DGDk",
+      "key": "rzp_test_NPamw0nFwGLz8l",
       "amount": num.parse(_controller.text) * 100,
       "name": "Metro Run",
       "description": "Ticket Booking",
