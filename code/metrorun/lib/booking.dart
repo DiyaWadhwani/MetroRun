@@ -251,8 +251,7 @@ class _BookingState extends State<Booking> {
                       ),
                       primary: kPrimaryColor,
                     ),
-                    child: Text(
-                      LocaleKeys.proceed.tr(),
+                    child: Text(LocaleKeys.proceed.tr(),
                         style: TextStyle(
                           fontSize: 25.0,
                           color: Colors.black,
@@ -261,7 +260,8 @@ class _BookingState extends State<Booking> {
                       if (from_station == 'Select Line' ||
                           to_station == 'Select Line' ||
                           to_station == null ||
-                          from_station == null) {
+                          from_station == null ||
+                          from_station == to_station) {
                         showAlertDialog(context);
                       } else {
                         mySource = from_station;

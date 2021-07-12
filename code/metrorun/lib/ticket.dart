@@ -107,157 +107,164 @@ class TicketState extends State<Ticket> {
 
     int counter = 0, i = 0, from = 0, to = 0;
 
-    if (greenLine.contains(from_station) && purpleLine.contains(to_station)) {
-      if (greenTop.contains(from_station)) {
-        for (i = 0; i < greenTop.length; i++) {
-          if (greenTop[i] == from_station) {
-            from = i;
-            numStops = from;
+    if (from_station == to_station) {
+      amount = 0.0;
+      print(amount);
+    } else {
+      if (greenLine.contains(from_station) && purpleLine.contains(to_station)) {
+        if (greenTop.contains(from_station)) {
+          for (i = 0; i < greenTop.length; i++) {
+            if (greenTop[i] == from_station) {
+              from = i;
+              numStops = from;
 
-            if (purpleRight.contains(to_station)) {
-              for (i = 0; i < purpleRight.length; i++) {
-                if (purpleRight[i] == to_station) {
-                  to = i;
-                  counter = from + to;
-                  if (counter == 1) {
-                    amount = (10.00);
-                  } else
-                    amount = (1 + (counter / 2) * 5.00);
+              if (purpleRight.contains(to_station)) {
+                for (i = 0; i < purpleRight.length; i++) {
+                  if (purpleRight[i] == to_station) {
+                    to = i;
+                    counter = from + to;
+                    if (counter == 1) {
+                      amount = (10.00);
+                    } else
+                      amount = (1 + (counter / 2) * 5.00);
+                  }
+                }
+              }
+
+              if (purpleLeft.contains(to_station)) {
+                for (i = 0; i < purpleLeft.length; i++) {
+                  if (purpleLeft[i] == to_station) {
+                    to = i;
+                    counter = from + to;
+                    if (counter == 1) {
+                      amount = (10.00);
+                    } else
+                      amount = (1 + (counter / 2) * 5.00);
+                  }
                 }
               }
             }
+          }
 
-            if (purpleLeft.contains(to_station)) {
-              for (i = 0; i < purpleLeft.length; i++) {
-                if (purpleLeft[i] == to_station) {
-                  to = i;
-                  counter = from + to;
-                  if (counter == 1) {
-                    amount = (10.00);
-                  } else
-                    amount = (1 + (counter / 2) * 5.00);
+          if (greenDown.contains(from_station)) {
+            for (i = 0; i < greenDown.length; i++) {
+              if (greenDown[i] == from_station) {
+                from = i;
+                numStops = from;
+
+                if (purpleRight.contains(to_station)) {
+                  for (i = 0; i < purpleRight.length; i++) {
+                    if (purpleRight[i] == to_station) {
+                      to = i;
+                      counter = from + to;
+                      if (counter == 1) {
+                        amount = (10.00);
+                      } else
+                        amount = (1 + (counter / 2) * 5.00);
+                    }
+                  }
+                }
+
+                if (purpleLeft.contains(to_station)) {
+                  for (i = 0; i < purpleLeft.length; i++) {
+                    if (purpleLeft[i] == to_station) {
+                      to = i;
+                      counter = from + to;
+                      if (counter == 1) {
+                        amount = (10.00);
+                      } else
+                        amount = (1 + (counter / 2) * 5.00);
+                    }
+                  }
                 }
               }
             }
           }
         }
-      }
+      } // green from, purple to
 
-      if (greenDown.contains(from_station)) {
-        for (i = 0; i < greenDown.length; i++) {
-          if (greenDown[i] == from_station) {
-            from = i;
-            numStops = from;
+      if (purpleLine.contains(from_station) && greenLine.contains(to_station)) {
+        if (purpleRight.contains(from_station)) {
+          for (i = 0; i < purpleRight.length; i++) {
+            if (purpleRight[i] == from_station) {
+              from = i;
+              numStops = from;
+              print(numStops);
 
-            if (purpleRight.contains(to_station)) {
-              for (i = 0; i < purpleRight.length; i++) {
-                if (purpleRight[i] == to_station) {
-                  to = i;
-                  counter = from + to;
-                  if (counter == 1) {
-                    amount = (10.00);
-                  } else
-                    amount = (1 + (counter / 2) * 5.00);
+              if (greenTop.contains(to_station)) {
+                for (i = 0; i < greenTop.length; i++) {
+                  if (greenTop[i] == to_station) {
+                    to = i;
+                    counter = from + to;
+                    if (counter == 1) {
+                      amount = (10.00);
+                    } else
+                      amount = (1 + (counter / 2) * 5.00);
+                  }
                 }
               }
-            }
-
-            if (purpleLeft.contains(to_station)) {
-              for (i = 0; i < purpleLeft.length; i++) {
-                if (purpleLeft[i] == to_station) {
-                  to = i;
-                  counter = from + to;
-                  if (counter == 1) {
-                    amount = (10.00);
-                  } else
-                    amount = (1 + (counter / 2) * 5.00);
-                }
-              }
-            }
-          }
-        }
-      }
-    } // green from, purple to
-
-    if (purpleLine.contains(from_station) && greenLine.contains(to_station)) {
-      if (purpleRight.contains(from_station)) {
-        for (i = 0; i < purpleRight.length; i++) {
-          if (purpleRight[i] == from_station) {
-            from = i;
-            numStops = from;
-            print(numStops);
-
-            if (greenTop.contains(to_station)) {
-              for (i = 0; i < greenTop.length; i++) {
-                if (greenTop[i] == to_station) {
-                  to = i;
-                  counter = from + to;
-                  if (counter == 1) {
-                    amount = (10.00);
-                  } else
-                    amount = (1 + (counter / 2) * 5.00);
-                }
-              }
-            }
-            if (greenDown.contains(to_station)) {
-              for (i = 0; i < greenDown.length; i++) {
-                if (greenDown[i] == to_station) {
-                  to = i;
-                  counter = from + to;
-                  if (counter == 1) {
-                    amount = (10.00);
-                  } else
-                    amount = (1 + (counter / 2) * 5.00);
+              if (greenDown.contains(to_station)) {
+                for (i = 0; i < greenDown.length; i++) {
+                  if (greenDown[i] == to_station) {
+                    to = i;
+                    counter = from + to;
+                    if (counter == 1) {
+                      amount = (10.00);
+                    } else
+                      amount = (1 + (counter / 2) * 5.00);
+                  }
                 }
               }
             }
           }
         }
-      }
 
-      if (purpleLeft.contains(from_station)) {
-        for (i = 0; i < purpleLeft.length; i++) {
-          if (purpleLeft[i] == from_station) {
-            from = i;
-            numStops = from;
+        if (purpleLeft.contains(from_station)) {
+          for (i = 0; i < purpleLeft.length; i++) {
+            if (purpleLeft[i] == from_station) {
+              from = i;
+              numStops = from;
 
-            if (greenTop.contains(to_station)) {
-              for (i = 0; i < greenTop.length; i++) {
-                if (greenTop[i] == to_station) {
-                  to = i;
-                  counter = from + to;
-                  if (counter == 1) {
-                    amount = (10.00);
-                  } else
-                    amount = (1 + (counter / 2) * 5.00);
+              if (greenTop.contains(to_station)) {
+                for (i = 0; i < greenTop.length; i++) {
+                  if (greenTop[i] == to_station) {
+                    to = i;
+                    counter = from + to;
+                    if (counter == 1) {
+                      amount = (10.00);
+                    } else
+                      amount = (1 + (counter / 2) * 5.00);
+                  }
                 }
               }
-            }
-            if (greenDown.contains(to_station)) {
-              for (i = 0; i < greenDown.length; i++) {
-                if (greenDown[i] == to_station) {
-                  to = i;
-                  counter = from + to;
-                  if (counter == 1) {
-                    amount = (10.00);
-                  } else
-                    amount = (1 + (counter / 2) * 5.00);
+              if (greenDown.contains(to_station)) {
+                for (i = 0; i < greenDown.length; i++) {
+                  if (greenDown[i] == to_station) {
+                    to = i;
+                    counter = from + to;
+                    if (counter == 1) {
+                      amount = (10.00);
+                    } else
+                      amount = (1 + (counter / 2) * 5.00);
+                  }
                 }
               }
             }
           }
         }
+        // purple from, green to
+        else {
+          if (((to_index - from_index).abs()) == 1) {
+            amount = (10.00);
+          } else {
+            amount = ((1 + (((to_index - from_index).abs()) / 2)) * 5.00);
+          }
+        }
       }
-    } // purple from, green to
-    else {
-      if (((to_index - from_index).abs()) == 1) {
-        amount = (10.00);
-      } else {
-        amount = ((1 + (((to_index - from_index).abs()) / 2)) * 5.00);
-      }
+
+      //amount = ((1 + ((to_index - from_index).abs())) * 5.0);
+      print(amount);
     }
-    //amount = ((1 + ((to_index - from_index).abs())) * 5.0);
-    print(amount);
   }
 
   //Metro Routes
