@@ -51,7 +51,7 @@ class CodegenLoader extends AssetLoader{
   "proceed": "Proceed",
   "ok": "OK",
   "error": "Error",
-  "Select_route_to_proceed": "Select route to proceed",
+  "Select_route_to_proceed": "Select valid route",
   "Recharge_metro_card": "Recharge metro card",
   "save_qr_code": "Save QR code until Ride ends",
   "Your_unique_QR_Code": "Your unique QR Code",
@@ -137,11 +137,15 @@ static const Map<String,dynamic> kn = {
   "proceed": "ಮುಂದುವರೆಯಲು",
   "ok": "ಸರಿ",
   "error": "ದೋಷ",
-  "Select_route_to_proceed": "ಮುಂದುವರಿಯಲು ಮಾರ್ಗವನ್ನು ಆಯ್ಕೆಮಾಡಿ",
+  "Select_route_to_proceed": "ಮಾನ್ಯ ಮಾರ್ಗವನ್ನು ಆಯ್ಕೆಮಾಡಿ",
   "Recharge_metro_card": "ಮೆಟ್ರೋ ಕಾರ್ಡ್ ರೀಚಾರ್ಜ್ ಮಾಡಿ",
   "save_qr_code": "ರೈಡ್ ಮುಗಿಯುವವರೆಗೆ QR ಕೋಡ್ ಅನ್ನು ಉಳಿಸಿ",
   "Your_unique_QR_Code": "ನಿಮ್ಮ ಅನನ್ಯ QR ಕೋಡ್",
+<<<<<<< HEAD
   "Select_your_route": "ಮಾರ್ಗವನ್ನು ಆಯ್ಕೆಮಾಡಿ.",
+=======
+  "Select_your_route": "ಮಾರ್ಗ ಆಯ್ಕೆಮಾಡಿ.",
+>>>>>>> 6780f442dddbd8212229f91cebed2ab99a4e59f3
   "Select_station": "ನಿಲ್ದಾಣವನ್ನು ಆಯ್ಕೆಮಾಡಿ",
   "generate_qr_code": "QR ಕೋಡ್ ರಚಿಸಿ",
   "Yelachenahalli": " ಯಲಚೇನಹಳ್ಳಿ",
