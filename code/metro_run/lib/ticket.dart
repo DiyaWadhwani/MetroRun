@@ -324,6 +324,7 @@ class TicketState extends State<Ticket> {
   }
 
   // ignore: non_constant_identifier_names
+  // ignore: missing_return
   double Calculate() {
     var greenDown = [
       'Nadaprabhu Kempegowda Station Majestic',

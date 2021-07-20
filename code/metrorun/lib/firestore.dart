@@ -59,10 +59,11 @@ Future<void> updateRideData() async {
 }
 
 int numTickets = 0;
+List rideList = [];
 
 Map<String, dynamic> fetchRides() {
   rides.get().then((querySnapshot) {
-    print(querySnapshot);
+    // print(querySnapshot);
     querySnapshot.docs.forEach((result) {
       rides.get().then((querySnapshot) {
         print(querySnapshot.size);
@@ -72,6 +73,8 @@ Map<String, dynamic> fetchRides() {
           rideFields = result.data() as Map<String, dynamic>;
           //print("Ride data-------" + rideFields.toString());
           ;
+          rideList.add(rideFields);
+          print("Final ===> $rideList");
         });
       });
     });
