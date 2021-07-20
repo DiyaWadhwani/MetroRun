@@ -14,7 +14,7 @@
       },
       "oauth_client": [
         {
-          "client_id": "669964356808-etj435dbs9il5d5ns0vjv9sdh1un09aq.apps.googleusercontent.com",
+          "client_id": "669964356808-1arotqeb7rkj4vg1sgfbe9144624urlk.apps.googleusercontent.com",
           "client_type": 1,
           "android_info": {
             "package_name": "com.metroapp.metrorun",
@@ -22,19 +22,19 @@
           }
         },
         {
-          "client_id": "669964356808-gencniltv74eif15cl53bi4m2vdd52kj.apps.googleusercontent.com",
-          "client_type": 1,
-          "android_info": {
-            "package_name": "com.metroapp.metrorun",
-            "certificate_hash": "a535344dad03170532d0918fae9d95093fa62542"
-          }
-        },
-        {
-          "client_id": "669964356808-t4r1mchgnqtr1bnh09g9c3h9ltv7acnj.apps.googleusercontent.com",
+          "client_id": "669964356808-8rrn2tilelclegcudqhjqa6lv52cm7pb.apps.googleusercontent.com",
           "client_type": 1,
           "android_info": {
             "package_name": "com.metroapp.metrorun",
             "certificate_hash": "fbbaf78bbc320b0cb175bb9adfb25464a574f947"
+          }
+        },
+        {
+          "client_id": "669964356808-a0feipj69g6pv471u6lmpa46775c1p60.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.metroapp.metrorun",
+            "certificate_hash": "a535344dad03170532d0918fae9d95093fa62542"
           }
         },
         {

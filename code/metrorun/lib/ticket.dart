@@ -117,6 +117,7 @@ class TicketState extends State<Ticket> {
             if (greenTop[i] == from_station) {
               from = i;
               numStops = from;
+              print(numStops);
 
               if (purpleRight.contains(to_station)) {
                 for (i = 0; i < purpleRight.length; i++) {
@@ -151,6 +152,7 @@ class TicketState extends State<Ticket> {
               if (greenDown[i] == from_station) {
                 from = i;
                 numStops = from;
+                print(numStops);
 
                 if (purpleRight.contains(to_station)) {
                   for (i = 0; i < purpleRight.length; i++) {
@@ -262,7 +264,7 @@ class TicketState extends State<Ticket> {
         }
       }
 
-      //amount = ((1 + ((to_index - from_index).abs())) * 5.0);
+      amount = ((1 + ((to_index - from_index).abs())) * 5.0);
       print(amount);
     }
   }
